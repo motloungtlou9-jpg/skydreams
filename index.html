@@ -2,853 +2,4960 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<title>skydreams.co.za | DESIGNER</title>
-<link rel="icon" type="image/svg+xml" href="logo.png">
-<link rel="stylesheet" href="style.css">
-  <style>/* ===== NEW GLASS SYSTEM ===== */
-.glass-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+<meta name="description" content="SkyDreams Web Design — beautiful websites, development, branding and digital solutions.">
+<title>SkyDreams | Web Design & Digital Solutions</title>
+
+<style>
+/* =========================================================
+   SKYDREAMS — COMPLETE STANDALONE WEBSITE
+   ========================================================= */
+
+:root{
+  --purple:#7c3aed;
+  --purple2:#a855f7;
+  --purple-light:#f3edff;
+  --dark:#101018;
+  --dark2:#181722;
+  --text:#171722;
+  --muted:#697080;
+  --white:#fff;
+  --line:rgba(20,20,35,.10);
+  --shadow:0 20px 60px rgba(20,15,40,.09);
+  --radius:20px;
 }
 
-/* Logo glass plate */
-.brand {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.5);
-  padding: 8px 18px;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
-.brand img {
-  position: static !important;
-  width: 130px !important;
-  height: auto !important;
-  left: auto !important;
-  top: auto !important;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* ===== NEW HERO - 2026 FEEL ===== */
-.hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-  overflow: hidden;
-  border-radius: 0 0 40px 40px;
-  background: #f8f8ff;
-}
-.hero-bg {
-  position: absolute !important;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 0 !important;
-  background-position: center !important;
-  filter: saturate(1.1);
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.2) 100%);
+html{
+  scroll-behavior:smooth;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 650px;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 24px;
-  padding: 42px !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+body{
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.6;
 }
-.hero-title {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-} </style>
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.progress-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:transparent;
+  z-index:9999;
+}
+
+.progress-fill{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--purple),var(--purple2));
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-wrap{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  flex-shrink:0;
+}
+
+.brand-mark{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:-.04em;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  box-shadow:0 10px 30px rgba(124,58,237,.25);
+}
+
+.brand-text{
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1;
+}
+
+.brand-text small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-list{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.nav-link{
+  position:relative;
+  color:#555a68;
+  font-size:14px;
+  font-weight:650;
+  transition:.2s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+  color:var(--purple);
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:2px;
+  border-radius:10px;
+  background:var(--purple);
+  transition:.2s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+  width:100%;
+}
+
+.nav-toggle{
+  display:none;
+  border:0;
+  background:none;
+  cursor:pointer;
+}
+
+.nav-toggle span{
+  display:block;
+  width:26px;
+  height:2px;
+  margin:5px 0;
+  background:#111;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:0 22px;
+  border-radius:13px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:800;
+  transition:
+    transform .2s,
+    box-shadow .2s,
+    background .2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  box-shadow:0 12px 30px rgba(124,58,237,.22);
+}
+
+.btn-primary:hover{
+  box-shadow:0 16px 36px rgba(124,58,237,.30);
+}
+
+.btn-ghost{
+  color:#fff;
+  border-color:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);
+}
+
+.btn-dark{
+  color:#fff;
+  background:#15151e;
+}
+
+.btn-outline{
+  color:var(--purple);
+  border-color:rgba(124,58,237,.25);
+  background:#fff;
+}
+
+.btn-block{
+  width:100%;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+  min-height:760px;
+  padding-top:78px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#0d0c14;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 75% 25%,rgba(168,85,247,.32),transparent 35%),
+    radial-gradient(circle at 20% 80%,rgba(124,58,237,.25),transparent 35%),
+    linear-gradient(135deg,#0b0a10,#171223 55%,#0d0c14);
+}
+
+.hero-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.16;
+  background-image:
+    linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(8,7,14,.94),rgba(8,7,14,.68),rgba(8,7,14,.35));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:80px 0;
+  color:#fff;
+}
+
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:22px;
+  color:#d8c8ff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.hero-kicker::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--purple2);
+}
+
+.hero-title{
+  max-width:850px;
+  font-size:clamp(46px,7vw,86px);
+  line-height:1.01;
+  letter-spacing:-.065em;
+  font-weight:900;
+}
+
+.typed-text{
+  color:#c4b5fd;
+}
+
+.caret{
+  display:inline-block;
+  width:3px;
+  height:.85em;
+  margin-left:5px;
+  vertical-align:-.08em;
+  background:#c4b5fd;
+  animation:blink .8s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0}
+}
+
+.hero-sub{
+  max-width:680px;
+  margin-top:26px;
+  color:rgba(255,255,255,.72);
+  font-size:17px;
+  line-height:1.85;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:34px;
+}
+
+.hero-meta{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  margin-top:34px;
+  color:rgba(255,255,255,.65);
+  font-size:12px;
+}
+
+.hero-meta li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.meta-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#b794f6;
+  box-shadow:0 0 15px #a855f7;
+}
+
+.scroll-hint{
+  position:absolute;
+  z-index:3;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.mouse{
+  display:block;
+  width:24px;
+  height:38px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:20px;
+  padding-top:7px;
+}
+
+.wheel{
+  display:block;
+  width:3px;
+  height:7px;
+  margin:auto;
+  border-radius:5px;
+  background:#fff;
+  animation:scrollwheel 1.4s infinite;
+}
+
+@keyframes scrollwheel{
+  0%{transform:translateY(0);opacity:1}
+  100%{transform:translateY(12px);opacity:0}
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-strip{
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.stat-item{
+  padding:34px 20px;
+  text-align:center;
+  border-right:1px solid var(--line);
+}
+
+.stat-item:last-child{
+  border-right:0;
+}
+
+.stat-num{
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:-.06em;
+}
+
+.stat-label{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section{
+  padding:100px 0;
+}
+
+.section-alt{
+  background:linear-gradient(180deg,#faf9ff,#f6f3ff);
+}
+
+.section-head{
+  max-width:720px;
+  margin:0 auto 50px;
+  text-align:center;
+}
+
+.eyebrow{
+  display:block;
+  margin-bottom:12px;
+  color:var(--purple);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.section-title{
+  font-size:clamp(32px,4vw,52px);
+  line-height:1.08;
+  letter-spacing:-.055em;
+  font-weight:900;
+}
+
+.section-head p{
+  margin-top:17px;
+  color:var(--muted);
+}
+
+.accent{
+  color:var(--purple);
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
+}
+
+.media-frame{
+  position:relative;
+  min-height:470px;
+  border-radius:28px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 30%,#c4b5fd,transparent 30%),
+    linear-gradient(135deg,#171225,#45227c);
+  box-shadow:var(--shadow);
+}
+
+.media-frame::before{
+  content:"SD";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:rgba(255,255,255,.11);
+  font-size:190px;
+  font-weight:900;
+  letter-spacing:-.1em;
+}
+
+.media-frame::after{
+  content:"SKYDREAMS";
+  position:absolute;
+  left:50%;
+  bottom:45px;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.65);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.35em;
+}
+
+.exp-badge{
+  position:absolute;
+  left:28px;
+  bottom:28px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:15px 18px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:15px;
+  background:rgba(10,8,18,.45);
+  backdrop-filter:blur(12px);
+}
+
+.exp-num{
+  font-size:28px;
+  font-weight:900;
+}
+
+.exp-text{
+  color:rgba(255,255,255,.7);
+  font-size:11px;
+  line-height:1.3;
+}
+
+.lead{
+  margin-top:20px;
+  color:#3e4350;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.split-body > p:not(.lead){
+  margin-top:18px;
+  color:var(--muted);
+}
+
+.check-list{
+  list-style:none;
+  margin:28px 0;
+  display:grid;
+  gap:12px;
+}
+
+.check-list li{
+  display:flex;
+  gap:10px;
+  color:#505665;
+  font-size:14px;
+}
+
+.check-list li::before{
+  content:"✓";
+  color:var(--purple);
+  font-weight:900;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skill{
+  margin-top:28px;
+}
+
+.skill-head{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:9px;
+  font-size:13px;
+  font-weight:750;
+}
+
+.skill-val{
+  color:var(--purple);
+}
+
+.skill-track{
+  height:7px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#e8e4ef;
+}
+
+.skill-fill{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--purple),var(--purple2));
+  transition:width 1.2s ease;
+}
+
+.steps{
+  list-style:none;
+  margin-top:25px;
+}
+
+.step{
+  display:flex;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.step-num{
+  color:var(--purple);
+  font-weight:900;
+  font-size:13px;
+}
+
+.step-body h3{
+  font-size:17px;
+}
+
+.step-body p{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.grid{
+  display:grid;
+  gap:22px;
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:0 12px 40px rgba(20,15,40,.05);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 22px 55px rgba(20,15,40,.11);
+  border-color:rgba(124,58,237,.20);
+}
+
+.service-card{
+  padding:30px;
+  transition:.25s;
+}
+
+.card-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  margin-bottom:23px;
+  color:var(--purple);
+  border-radius:15px;
+  background:var(--purple-light);
+}
+
+.card-icon svg{
+  width:25px;
+  height:25px;
+}
+
+.service-card h3{
+  font-size:20px;
+  letter-spacing:-.03em;
+}
+
+.service-card p{
+  margin:12px 0 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--purple);
+  font-size:13px;
+  font-weight:800;
+}
+
+.arrow{
+  transition:.2s;
+}
+
+.card-link:hover .arrow{
+  transform:translateX(4px);
+}
+
+/* =========================================================
+   WORK
+   ========================================================= */
+
+.filters{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:35px;
+}
+
+.filter-btn{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 17px;
+  color:#646978;
+  background:#fff;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:750;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  color:#fff;
+  border-color:var(--purple);
+  background:var(--purple);
+}
+
+.work-item{
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.work-thumb{
+  position:relative;
+  height:240px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:#fff;
+  background:
+    radial-gradient(circle at 30% 30%,rgba(255,255,255,.22),transparent 25%),
+    linear-gradient(135deg,#211335,#7542ba);
+}
+
+.work-item:nth-child(2) .work-thumb{
+  background:linear-gradient(135deg,#101827,#315b86);
+}
+
+.work-item:nth-child(3) .work-thumb{
+  background:linear-gradient(135deg,#2d1720,#9b4262);
+}
+
+.work-item:nth-child(4) .work-thumb{
+  background:linear-gradient(135deg,#10251f,#2e806d);
+}
+
+.work-item:nth-child(5) .work-thumb{
+  background:linear-gradient(135deg,#221c12,#a77939);
+}
+
+.work-item:nth-child(6) .work-thumb{
+  background:linear-gradient(135deg,#16162b,#514ca0);
+}
+
+.work-thumb::before{
+  content:"SD";
+  font-size:85px;
+  font-weight:900;
+  opacity:.15;
+}
+
+.work-zoom{
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.17);
+  backdrop-filter:blur(8px);
+  font-size:24px;
+}
+
+.work-caption{
+  padding:20px;
+}
+
+.work-tag{
+  color:var(--purple);
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.work-caption h3{
+  margin-top:5px;
+  font-size:17px;
+}
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+.team-grid{
+  max-width:600px;
+  margin:auto;
+}
+
+.team-card{
+  overflow:hidden;
+  transition:.25s;
+}
+
+.team-photo{
+  min-height:330px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:
+    radial-gradient(circle at 70% 25%,#c4b5fd,transparent 25%),
+    linear-gradient(145deg,#181224,#55318c);
+}
+
+.team-initials{
+  width:150px;
+  height:150px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.12);
+  font-size:45px;
+  font-weight:900;
+}
+
+.team-body{
+  padding:25px;
+}
+
+.team-body h3{
+  font-size:21px;
+}
+
+.team-role{
+  display:block;
+  margin-top:4px;
+  color:var(--purple);
+  font-size:12px;
+  font-weight:800;
+}
+
+.team-body p{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.team-socials{
+  display:flex;
+  gap:8px;
+  margin-top:17px;
+}
+
+.team-socials a{
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  color:var(--purple);
+  background:var(--purple-light);
+  font-size:13px;
+  font-weight:900;
+}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
+.section-testimonials{
+  background:#0e0d14;
+  color:#fff;
+}
+
+.testimonial{
+  position:relative;
+  max-width:800px;
+  min-height:270px;
+  margin:auto;
+  padding:50px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:25px;
+  background:rgba(255,255,255,.035);
+}
+
+.quote-mark{
+  color:#b794f6;
+  font-size:65px;
+  line-height:.5;
+}
+
+.testimonial blockquote{
+  margin:20px 0 28px;
+  color:rgba(255,255,255,.83);
+  font-size:20px;
+  line-height:1.65;
+}
+
+.slide-person{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  font-size:12px;
+  font-weight:900;
+}
+
+.slide-person strong{
+  display:block;
+  font-size:13px;
+}
+
+.slide-person span{
+  display:block;
+  color:rgba(255,255,255,.48);
+  font-size:11px;
+}
+
+.slider-controls{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:25px;
+}
+
+.slide-btn{
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:50%;
+  color:#fff;
+  background:rgba(255,255,255,.06);
+  cursor:pointer;
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-top:17px;
+}
+
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#514d5d;
+  cursor:pointer;
+}
+
+.dot.active{
+  width:22px;
+  border-radius:10px;
+  background:#a855f7;
+}
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+
+.pricing-grid{
+  align-items:stretch;
+}
+
+.price-card{
+  position:relative;
+  padding:34px;
+  transition:.25s;
+}
+
+.price-card.featured{
+  border:2px solid rgba(124,58,237,.35);
+  box-shadow:0 25px 70px rgba(124,58,237,.14);
+}
+
+.ribbon{
+  position:absolute;
+  top:18px;
+  right:18px;
+  padding:5px 10px;
+  border-radius:999px;
+  color:#fff;
+  background:var(--purple);
+  font-size:9px;
+  font-weight:850;
+  text-transform:uppercase;
+}
+
+.price-card h3{
+  font-size:20px;
+}
+
+.price{
+  margin-top:20px;
+  font-size:42px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-.06em;
+}
+
+.price-note{
+  min-height:44px;
+  margin:12px 0 25px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.price-list{
+  list-style:none;
+  margin-bottom:28px;
+}
+
+.price-list li{
+  padding:9px 0;
+  border-bottom:1px solid var(--line);
+  color:#565c69;
+  font-size:13px;
+}
+
+.price-list li::before{
+  content:"✓";
+  margin-right:9px;
+  color:var(--purple);
+  font-weight:900;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.container-narrow{
+  max-width:850px;
+}
+
+.faq-list{
+  border-top:1px solid var(--line);
+}
+
+.faq-item{
+  border-bottom:1px solid var(--line);
+}
+
+.faq-q{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:23px 5px;
+  border:0;
+  background:none;
+  cursor:pointer;
+  text-align:left;
+  color:var(--text);
+  font-weight:750;
+}
+
+.faq-icon{
+  color:var(--purple);
+  font-size:22px;
+  transition:.2s;
+}
+
+.faq-item.open .faq-icon{
+  transform:rotate(45deg);
+}
+
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+}
+
+.faq-a-inner{
+  padding:0 5px 22px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================================================
+   BLOG
+   ========================================================= */
+
+.blog-cover{
+  height:190px;
+  display:flex;
+  align-items:flex-end;
+  padding:18px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 70% 20%,rgba(255,255,255,.3),transparent 20%),
+    linear-gradient(135deg,#34205c,#9d70e4);
+}
+
+.blog-card:nth-child(2) .blog-cover{
+  background:linear-gradient(135deg,#173449,#4d9ac1);
+}
+
+.blog-card:nth-child(3) .blog-cover{
+  background:linear-gradient(135deg,#3a1e2e,#b25a7d);
+}
+
+.blog-cover span{
+  padding:6px 9px;
+  border-radius:8px;
+  background:rgba(0,0,0,.25);
+  font-size:10px;
+  font-weight:750;
+}
+
+.blog-body{
+  padding:23px;
+}
+
+.blog-date{
+  color:var(--purple);
+  font-size:10px;
+  font-weight:800;
+}
+
+.blog-body h3{
+  margin-top:9px;
+  font-size:18px;
+  line-height:1.3;
+}
+
+.blog-body p{
+  margin:11px 0 18px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-list{
+  list-style:none;
+  display:grid;
+  gap:22px;
+}
+
+.contact-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.contact-icon{
+  width:43px;
+  height:43px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  color:var(--purple);
+  background:var(--purple-light);
+}
+
+.contact-icon svg{
+  width:20px;
+  height:20px;
+}
+
+.contact-list strong{
+  display:block;
+  font-size:13px;
+}
+
+.contact-list span:not(.contact-icon){
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.contact-socials{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-top:30px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.soc{
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  color:var(--purple);
+  background:var(--purple-light);
+}
+
+.form{
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.form-field{
+  margin-bottom:17px;
+}
+
+.form-field label{
+  display:block;
+  margin-bottom:7px;
+  font-size:12px;
+  font-weight:750;
+}
+
+.form-field input,
+.form-field textarea,
+.news-form input{
+  width:100%;
+  border:1px solid rgba(20,20,35,.13);
+  border-radius:12px;
+  outline:none;
+  padding:13px 14px;
+  color:var(--text);
+  background:#fff;
+  transition:.2s;
+}
+
+.form-field textarea{
+  resize:vertical;
+  min-height:130px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.news-form input:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(124,58,237,.09);
+}
+
+.error-msg{
+  display:block;
+  color:#dc2626;
+  font-size:10px;
+}
+
+.form-hint{
+  margin-top:11px;
+  text-align:center;
+  color:#8a8e98;
+  font-size:10px;
+}
+
+.form-success{
+  padding:45px 30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  text-align:center;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.success-check{
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 17px;
+  border-radius:50%;
+  color:#fff;
+  background:#16a34a;
+  font-size:25px;
+}
+
+.form-success h3{
+  font-size:24px;
+}
+
+.form-success p{
+  margin:10px 0 20px;
+  color:var(--muted);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer{
+  padding:70px 0 25px;
+  color:#fff;
+  background:#0c0b12;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+  gap:40px;
+}
+
+.footer-col h4{
+  margin-bottom:17px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin:9px 0;
+}
+
+.footer-col li a{
+  color:#9895a3;
+  font-size:12px;
+  transition:.2s;
+}
+
+.footer-col li a:hover{
+  color:#fff;
+}
+
+.footer-about p{
+  max-width:260px;
+  margin-top:18px;
+  color:#888591;
+  font-size:12px;
+}
+
+.footer-about .brand-text{
+  color:#fff;
+}
+
+.footer-about .brand-text small{
+  color:#9995a5;
+}
+
+.news-form{
+  display:flex;
+  gap:7px;
+}
+
+.news-form input{
+  min-width:0;
+  background:#17161e;
+  border-color:rgba(255,255,255,.1);
+  color:#fff;
+}
+
+.news-msg{
+  margin-top:8px;
+  color:#a7f3d0;
+  font-size:10px;
+}
+
+.footer-bottom{
+  margin-top:50px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#777480;
+  font-size:11px;
+}
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.to-top{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:900;
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  color:#fff;
+  background:var(--purple);
+  box-shadow:0 12px 30px rgba(124,58,237,.25);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(15px);
+  transition:.25s;
+}
+
+.to-top.show{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  display:none;
+  place-items:center;
+  padding:30px;
+  background:rgba(5,4,10,.92);
+}
+
+.lightbox.show{
+  display:grid;
+}
+
+.lightbox-inner{
+  width:min(850px,100%);
+  padding:35px;
+  border-radius:25px;
+  color:#fff;
+  background:#16141f;
+  text-align:center;
+}
+
+.lightbox-visual{
+  height:350px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,#24153b,#7443ae);
+}
+
+.lightbox-visual span{
+  color:rgba(255,255,255,.18);
+  font-size:120px;
+  font-weight:900;
+}
+
+.lightbox h3{
+  margin-top:20px;
+}
+
+.lightbox p{
+  margin-top:7px;
+  color:#aaa6b5;
+  font-size:13px;
+}
+
+.lb-btn{
+  position:absolute;
+  border:0;
+  cursor:pointer;
+  color:#fff;
+  background:rgba(255,255,255,.1);
+}
+
+.lb-close{
+  top:20px;
+  right:25px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  font-size:22px;
+}
+
+.lb-prev,
+.lb-next{
+  top:50%;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  font-size:30px;
+}
+
+.lb-prev{
+  left:20px;
+}
+
+.lb-next{
+  right:20px;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .main-nav{
+    position:absolute;
+    left:4%;
+    right:4%;
+    top:86px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    padding:20px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:#fff;
+    box-shadow:var(--shadow);
+  }
+
+  .main-nav.open{
+    display:flex;
+  }
+
+  .nav-list{
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+  }
+
+  .nav-link{
+    display:block;
+    padding:12px 5px;
+  }
+
+  .nav-link::after{
+    display:none;
+  }
+
+  .nav-cta{
+    margin-top:10px;
+  }
+
+  .split{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .container{
+    width:min(92%,500px);
+  }
+
+  .hero{
+    min-height:700px;
+  }
+
+  .hero-content{
+    padding-top:70px;
+  }
+
+  .hero-title{
+    font-size:47px;
+  }
+
+  .hero-sub{
+    font-size:15px;
+  }
+
+  .hero-meta{
+    display:grid;
+    gap:10px;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat-item{
+    border-bottom:1px solid var(--line);
+  }
+
+  .section{
+    padding:70px 0;
+  }
+
+  .media-frame{
+    min-height:350px;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .testimonial{
+    padding:30px;
+  }
+
+  .testimonial blockquote{
+    font-size:17px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .news-form{
+    max-width:400px;
+  }
+
+  .lightbox{
+    padding:15px;
+  }
+
+  .lightbox-inner{
+    padding:20px;
+  }
+
+  .lightbox-visual{
+    height:260px;
+  }
+
+  .lb-prev{
+    left:8px;
+  }
+
+  .lb-next{
+    right:8px;
+  }
+}
+</style>
 </head>
+
 <body id="top">
 
-<!-- ==================== SCROLL PROGRESS BAR ==================== -->
-<div id="progressBar" class="progress-bar"><span id="progressFill" class="progress-fill"></span></div>
+<!-- =======================================================
+     PROGRESS
+======================================================= -->
 
-<!-- ==================== HEADER / NAVIGATION ==================== -->
-<header id="siteHeader" class="site-header" style="background:silver;">
-SKYDREAMS
+<div class="progress-bar">
+  <span id="progressFill" class="progress-fill"></span>
+</div>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="site-header" id="siteHeader">
+
   <div class="container nav-wrap">
-    
 
-    <button type="button" id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    <a href="#top" class="brand" aria-label="SkyDreams home">
+
+      <span class="brand-mark">SD</span>
+
+      <span class="brand-text">
+        SkyDreams
+        <small>Web Design</small>
+      </span>
+
+    </a>
+
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
     </button>
 
-    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-      <ul id="navList">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#services" clas DREAMS Sv-link">Services</a></li>
-        <li><a href="#work" class="nav-link">Work</a></li>
-        <li><a href="#team" class="nav-link">Team</a></li>
-        <li><a href="#pricing" class="nav-link">Pricing</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+
+    <nav class="main-nav" id="mainNav">
+
+      <ul class="nav-list">
+
+        <li>
+          <a href="#home" class="nav-link active">Home</a>
+        </li>
+
+        <li>
+          <a href="#about" class="nav-link">About</a>
+        </li>
+
+        <li>
+          <a href="#services" class="nav-link">Services</a>
+        </li>
+
+        <li>
+          <a href="#work" class="nav-link">Work</a>
+        </li>
+
+        <li>
+          <a href="#team" class="nav-link">Team</a>
+        </li>
+
+        <li>
+          <a href="#pricing" class="nav-link">Pricing</a>
+        </li>
+
+        <li>
+          <a href="#blog" class="nav-link">Blog</a>
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+
       </ul>
-      <a href="#contact" class="btn btn-primary btn-sm nav-cta">Start a project</a>
+
+      <a href="#contact" class="btn btn-primary nav-cta">
+        Start a project
+      </a>
+
     </nav>
+
   </div>
+
 </header>
 
-<!-- ==================== HERO ==================== -->
-<section id="home" class="hero">
-  <div id="heroBg" class="hero-bg" style="background-image:url('hero.png');"></div>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-bg"></div>
+
   <div class="hero-overlay"></div>
 
-  <div class="container hero-content" style="padding-left: 12px;">
-    
-    <h1 class="hero-title anim-up d2">
-      Your  business deserves a better <span id="typed" class="typed-text"></span><span id="typeCaret" class="caret"></span>
+  <div class="container hero-content">
+
+    <span class="hero-kicker">
+      Digital design studio
+    </span>
+
+    <h1 class="hero-title">
+
+      Your business deserves a
+
+      <span id="typed" class="typed-text"></span>
+
+      <span class="caret"></span>
+
     </h1>
-    <p class="hero-sub anim-up d3">
-      Strategy, design and development under one roof. solutions helps ambitious brands grow
-      with fast, beautiful and accessible digital experiences — built to work on any device,
-      any browser, any era.
+
+
+    <p class="hero-sub">
+
+      We create beautiful websites, digital experiences and
+      brand identities that help businesses look professional,
+      connect with customers and grow online.
+
     </p>
-    <div class="hero-actions anim-up d4">
-      <a href="#contact" class="btn btn-primary">Start a project</a>
-      <a href="#work" class="btn btn-ghost">View our work</a>
+
+
+    <div class="hero-actions">
+
+      <a href="#contact" class="btn btn-primary">
+        Start a project →
+      </a>
+
+      <a href="#work" class="btn btn-ghost">
+        View our work
+      </a>
+
     </div>
-    <ul class="hero-meta anim-up d5">
-      <li><span class="meta-dot"></span> 4.9/5 client rating</li>
-      <li><span class="meta-dot"></span> 250+ projects shipped</li>
-      <li><span class="meta-dot"></span> 100% money-back guarantee</li>
+
+
+    <ul class="hero-meta">
+
+      <li>
+        <span class="meta-dot"></span>
+        Professional design
+      </li>
+
+      <li>
+        <span class="meta-dot"></span>
+        Mobile friendly
+      </li>
+
+      <li>
+        <span class="meta-dot"></span>
+        Built for growth
+      </li>
+
     </ul>
+
   </div>
 
-  <a href="#stats" class="scroll-hint" aria-label="Scroll down" style="margin: 0px;position: absolute;left: 50%;">
-    <span class="mouse"><span class="wheel"></span></span>
+
+  <a href="#stats" class="scroll-hint" aria-label="Scroll down">
+
+    <span class="mouse">
+      <span class="wheel"></span>
+    </span>
+
   </a>
+
 </section>
 
-<!-- ==================== STATS ==================== -->
-<div id="stats" class="stats-strip">
-  <div class="container">
-    <div class="stat-item reveal">
-      <div class="stat-num"><span class="counter" data-target="250">0</span>+</div>
-      <div class="stat-label">Projects delivered</div>
+
+<!-- =======================================================
+     STATS
+======================================================= -->
+
+<section class="stats-strip" id="stats">
+
+  <div class="container stats-grid">
+
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="40">0</span>+
+      </div>
+      <div class="stat-label">Projects completed</div>
     </div>
-    <div class="stat-item reveal">
-      <div class="stat-num"><span class="counter" data-target="120">0</span>+</div>
+
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="30">0</span>+
+      </div>
       <div class="stat-label">Happy clients</div>
     </div>
-    <div class="stat-item reveal">
-      <div class="stat-num"><span class="counter" data-target="15">0</span></div>
-      <div class="stat-label">Industry awards</div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-num"><span class="counter" data-target="9">0</span></div>
-      <div class="stat-label">Years of craft</div>
-    </div>
-  </div>
-</div>
 
-<!-- ==================== ABOUT ==================== -->
-<section id="about" class="section"style="padding-top: 36px;">
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="5">0</span>+
+      </div>
+      <div class="stat-label">Years creating</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="100">0</span>%
+      </div>
+      <div class="stat-label">Commitment</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section class="section" id="about">
+
   <div class="container">
+
     <div class="split">
-      <div class="split-media reveal">
-        <div class="media-frame">
-          <img src="abt.png" alt="logo">
-          <div class="exp-badge">
-            <span class="exp-num">9+</span>
-            <span class="exp-text">Years of<br>experience</span>
-          </div>
+
+      <div class="media-frame reveal">
+
+        <div class="exp-badge">
+
+          <span class="exp-num">SD</span>
+
+          <span class="exp-text">
+            SkyDreams<br>
+            Web Design
+          </span>
+
         </div>
+
       </div>
 
+
       <div class="split-body reveal">
-        <span class="eyebrow"><b>About</b> </span>
-        <h2 class="section-title">A small studio with <span class="accent">big ideas</span></h2>
+
+        <span class="eyebrow">
+          About SkyDreams
+        </span>
+
+        <h2 class="section-title">
+
+          Small studio.
+
+          <span class="accent">
+            Big ideas.
+          </span>
+
+        </h2>
+
+
         <p class="lead">
-          We are a crew of designers, developers and strategists who believe the web should be
-          fast, honest and beautiful — for everyone, including people on older computers and browsers.
+
+          SkyDreams creates modern websites and digital
+          experiences for people and businesses that want
+          to stand out online.
+
         </p>
+
+
         <p>
-          Since 2017 we have partnered with startups and established brands across four continents,
-          shipping products that perform as well in the boardroom as they do in the browser.
+
+          Our focus is simple: make your business look
+          professional, communicate clearly and give your
+          customers an experience they remember.
+
         </p>
+
+
         <ul class="check-list">
-          <li>Progressive enhancement &amp; accessibility first</li>
-          <li>Hand-coded, dependency-free builds</li>
-          <li>Transparent pricing, no lock-in contracts</li>
-          <li>24/7 support with a real human on the other end</li>
+
+          <li>
+            Modern and responsive website design
+          </li>
+
+          <li>
+            Clean and user-friendly interfaces
+          </li>
+
+          <li>
+            Mobile-first experiences
+          </li>
+
+          <li>
+            Personal service and direct communication
+          </li>
+
         </ul>
-        <a href="#team" class="btn btn-dark" style="font-size: 13px;height: 30px;">Founder</a>
+
+
+        <a href="#team" class="btn btn-dark">
+          Meet the founder
+        </a>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== SKILLS ==================== -->
+
+<!-- =======================================================
+     SKILLS / PROCESS
+======================================================= -->
+
 <section class="section section-alt">
+
   <div class="container">
+
     <div class="split">
+
       <div class="split-body reveal">
-        <span class="eyebrow">What we're good at</span>
-        <h2 class="section-title">Skills that ship <span class="accent">real results</span></h2>
+
+        <span class="eyebrow">
+          What we do
+        </span>
+
+        <h2 class="section-title">
+
+          Skills that create
+
+          <span class="accent">
+            real results.
+          </span>
+
+        </h2>
+
+
         <p class="lead">
-          Every engagement starts with research and ends with measurable outcomes.
-          Here is where our energy goes on a typical project.
+
+          Every project combines creativity, technology
+          and attention to detail.
+
         </p>
+
+
         <div class="skill">
-          <div class="skill-head"><span class="skill-name">UI / UX Design</span><span class="skill-val">92%</span></div>
-          <div class="skill-track"><span class="skill-fill" data-value="92"></span></div>
+
+          <div class="skill-head">
+            <span>UI / UX Design</span>
+            <span class="skill-val">95%</span>
+          </div>
+
+          <div class="skill-track">
+            <span class="skill-fill" data-value="95"></span>
+          </div>
+
         </div>
+
+
         <div class="skill">
-          <div class="skill-head"><span class="skill-name">Front-end Development</span><span class="skill-val">88%</span></div>
-          <div class="skill-track"><span class="skill-fill" data-value="88"></span></div>
+
+          <div class="skill-head">
+            <span>Web Development</span>
+            <span class="skill-val">90%</span>
+          </div>
+
+          <div class="skill-track">
+            <span class="skill-fill" data-value="90"></span>
+          </div>
+
         </div>
+
+
         <div class="skill">
-          <div class="skill-head"><span class="skill-name">Brand Strategy</span><span class="skill-val">85%</span></div>
-          <div class="skill-track"><span class="skill-fill" data-value="85"></span></div>
+
+          <div class="skill-head">
+            <span>Branding</span>
+            <span class="skill-val">88%</span>
+          </div>
+
+          <div class="skill-track">
+            <span class="skill-fill" data-value="88"></span>
+          </div>
+
         </div>
+
+
         <div class="skill">
-          <div class="skill-head"><span class="skill-name">SEO &amp; Growth</span><span class="skill-val">78%</span></div>
-          <div class="skill-track"><span class="skill-fill" data-value="78"></span></div>
+
+          <div class="skill-head">
+            <span>SEO & Growth</span>
+            <span class="skill-val">80%</span>
+          </div>
+
+          <div class="skill-track">
+            <span class="skill-fill" data-value="80"></span>
+          </div>
+
         </div>
+
       </div>
+
+
       <div class="split-body reveal">
-        <span class="eyebrow">How we work</span>
-        <h2 class="section-title">A process you can <span class="accent">follow along</span></h2>
+
+        <span class="eyebrow">
+          How we work
+        </span>
+
+        <h2 class="section-title">
+
+          A process you can
+
+          <span class="accent">
+            follow.
+          </span>
+
+        </h2>
+
+
         <ol class="steps">
+
           <li class="step">
-            <span class="step-num">01</span>
+
+            <span class="step-num">
+              01
+            </span>
+
             <div class="step-body">
-              <h3>Discover</h3>
-              <p>Workshops, analytics and interviews to define goals, users and success metrics.</p>
+
+              <h3>
+                Discover
+              </h3>
+
+              <p>
+                We understand your business, goals,
+                customers and vision.
+              </p>
+
             </div>
+
           </li>
+
+
           <li class="step">
-            <span class="step-num">02</span>
+
+            <span class="step-num">
+              02
+            </span>
+
             <div class="step-body">
-              <h3>Design</h3>
-              <p>Wireframes become polished interfaces, prototyped and tested with real users.</p>
+
+              <h3>
+                Design
+              </h3>
+
+              <p>
+                We turn your ideas into a beautiful,
+                clear and professional design.
+              </p>
+
             </div>
+
           </li>
+
+
           <li class="step">
-            <span class="step-num">03</span>
+
+            <span class="step-num">
+              03
+            </span>
+
             <div class="step-body">
-              <h3>Develop</h3>
-              <p>Clean, semantic, dependency-free code that degrades gracefully on old browsers.</p>
+
+              <h3>
+                Develop
+              </h3>
+
+              <p>
+                We build the website and make sure it
+                works smoothly across devices.
+              </p>
+
             </div>
+
           </li>
+
+
           <li class="step">
-            <span class="step-num">04</span>
+
+            <span class="step-num">
+              04
+            </span>
+
             <div class="step-body">
-              <h3>Deliver</h3>
-              <p>Launch, measure, iterate. We stay on the team long after the confetti settles.</p>
+
+              <h3>
+                Launch
+              </h3>
+
+              <p>
+                Your website goes live and we remain
+                available for improvements and support.
+              </p>
+
             </div>
+
           </li>
+
         </ol>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== SERVICES ==================== -->
-<section id="services" class="section">
+
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section class="section" id="services">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Our services</span>
-      <h2 class="section-title">Everything you need to <span class="accent">win online</span></h2>
-      <p>Six disciplines, one team. Pick a single service or let us run the whole show.</p>
+
+      <span class="eyebrow">
+        Our services
+      </span>
+
+      <h2 class="section-title">
+
+        Everything you need to
+
+        <span class="accent">
+          win online.
+        </span>
+
+      </h2>
+
+      <p>
+        From your first idea to a finished website,
+        SkyDreams can help you build your online presence.
+      </p>
+
     </div>
+
 
     <div class="grid grid-3">
-      <article class="card service-card reveal">
-        <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
-        </span>
-        <h3>Web Design</h3>
-        <p>Interfaces that look stunning and convert visitors. Every pixel justified, every interaction intentional.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
-      </article>
+
 
       <article class="card service-card reveal">
+
         <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <path d="M4 4h16v16H4z"/>
+            <path d="M8 8h8M8 12h8M8 16h5"/>
+
+          </svg>
+
         </span>
-        <h3>Web Development</h3>
-        <p>Fast, semantic, dependency-free builds with progressive enhancement and old-browser support baked in.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
+
+        <h3>
+          Web Design
+        </h3>
+
+        <p>
+          Beautiful websites designed to make your
+          business look professional and memorable.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
       </article>
 
-      <article class="card service-card reveal">
-        <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="14.31" y1="8" x2="20.05" y2="17.94"/><line x1="9.69" y1="8" x2="21.17" y2="8"/><line x1="7.38" y1="12" x2="13.12" y2="2.06"/><line x1="9.69" y1="16" x2="3.95" y2="6.06"/><line x1="14.31" y1="16" x2="2.83" y2="16"/><line x1="16.62" y1="12" x2="10.88" y2="21.94"/></svg>
-        </span>
-        <h3>Brand Identity</h3>
-        <p>Logos, guidelines, voice and visuals — a memorable identity that travels consistently across every touchpoint.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
-      </article>
 
       <article class="card service-card reveal">
+
         <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <path d="M8 9l-4 3 4 3"/>
+            <path d="M16 9l4 3-4 3"/>
+            <path d="M14 5l-4 14"/>
+
+          </svg>
+
         </span>
-        <h3>SEO &amp; Growth</h3>
-        <p>Technical SEO, content strategy and analytics so your site is found, loved and ranked where it matters.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
+
+        <h3>
+          Web Development
+        </h3>
+
+        <p>
+          Fast, responsive and functional websites
+          built with clean modern code.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
       </article>
 
-      <article class="card service-card reveal">
-        <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </span>
-        <h3>Mobile Apps</h3>
-        <p>Native-feeling apps for iOS and Android with the same obsessive attention to detail as our websites.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
-      </article>
 
       <article class="card service-card reveal">
+
         <span class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+
+          </svg>
+
         </span>
-        <h3>Support &amp; Hosting</h3>
-        <p>Managed hosting, monitoring and maintenance with a real human on the line, 24 hours a day.</p>
-        <a href="#contact" class="card-link">Learn more <span class="arrow">&#8594;</span></a>
+
+        <h3>
+          Brand Identity
+        </h3>
+
+        <p>
+          Professional visual identity that helps
+          people recognise and remember your business.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
       </article>
+
+
+      <article class="card service-card reveal">
+
+        <span class="card-icon">
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <path d="M4 17l5-5 4 4 7-8"/>
+            <path d="M16 8h4v4"/>
+
+          </svg>
+
+        </span>
+
+        <h3>
+          SEO & Growth
+        </h3>
+
+        <p>
+          Improve your online visibility and help
+          more potential customers discover you.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
+      </article>
+
+
+      <article class="card service-card reveal">
+
+        <span class="card-icon">
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <rect x="6" y="2" width="12" height="20" rx="2"/>
+            <path d="M10 18h4"/>
+
+          </svg>
+
+        </span>
+
+        <h3>
+          Mobile Experiences
+        </h3>
+
+        <p>
+          Responsive experiences that look great on
+          phones, tablets and desktop computers.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
+      </article>
+
+
+      <article class="card service-card reveal">
+
+        <span class="card-icon">
+
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="1.8">
+
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 8v4l3 2"/>
+            <path d="M8 4l-2-2"/>
+            <path d="M16 4l2-2"/>
+
+          </svg>
+
+        </span>
+
+        <h3>
+          Support & Hosting
+        </h3>
+
+        <p>
+          Keep your website online, updated and
+          performing properly after launch.
+        </p>
+
+        <a href="#contact" class="card-link">
+          Learn more <span class="arrow">→</span>
+        </a>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== WORK / PORTFOLIO ==================== -->
-<section id="work" class="section section-alt">
+
+<!-- =======================================================
+     WORK
+======================================================= -->
+
+<section class="section section-alt" id="work">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Selected work</span>
-      <h2 class="section-title">Projects we're <span class="accent">proud of</span></h2>
-      <p>Click a project to view it in full-screen. Filter by category to explore.</p>
+
+      <span class="eyebrow">
+        Selected work
+      </span>
+
+      <h2 class="section-title">
+
+        Projects we're
+
+        <span class="accent">
+          proud of.
+        </span>
+
+      </h2>
+
+      <p>
+        Explore examples of the type of digital work
+        SkyDreams can create.
+      </p>
+
     </div>
 
-    <div class="filters reveal" id="filters">
-      <button type="button" class="filter-btn active" data-filter="all">All</button>
-      <button type="button" class="filter-btn" data-filter="web">Web</button>
-      <button type="button" class="filter-btn" data-filter="app">Apps</button>
-      <button type="button" class="filter-btn" data-filter="brand">Branding</button>
+
+    <div class="filters">
+
+      <button class="filter-btn active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn" data-filter="web">
+        Web
+      </button>
+
+      <button class="filter-btn" data-filter="app">
+        Apps
+      </button>
+
+      <button class="filter-btn" data-filter="brand">
+        Branding
+      </button>
+
     </div>
 
-    <div class="grid grid-3 work-grid" id="workGrid">
-      <figure class="work-item reveal" data-category="web" data-title="Meridian — corporate website" data-caption="Full redesign for a global logistics company. 3.2x faster, +41% conversions." data-src="images/work-1.jpg">
-        <div class="thumb">
-          <img src="work-1.jpg" alt="Meridian corporate website on a laptop">
-          <span class="work-zoom">+</span>
-        </div>
-        <figcaption>
-          <span class="work-tag">Web Design</span>
-          <h3>Meridian — corporate website</h3>
-        </figcaption>
-      </figure>
 
-      <figure class="work-item reveal" data-category="app" data-title="Pulse — fitness app" data-caption="Health tracking app with offline-first data sync and a 4.8 App Store rating." data-src="images/work-2.jpg">
-        <div class="thumb">
-          <img src="work-2.jpg" alt="Pulse fitness app screens">
-          <span class="work-zoom">+</span>
-        </div>
-        <figcaption>
-          <span class="work-tag">Mobile App</span>
-          <h3>Pulse — fitness app</h3>
-        </figcaption>
-      </figure>
+    <div class="grid grid-3" id="workGrid">
 
-      <figure class="work-item reveal" data-category="brand" data-title="Atlas &amp; Co — brand identity" data-caption="Complete identity system: logo, stationery, guidelines and launch campaign." data-src="images/work-3.jpg">
-        <div class="thumb">
-          <img src="work-3.jpg" alt="Atlas and Co brand stationery">
-          <span class="work-zoom">+</span>
-        </div>
-        <figcaption>
-          <span class="work-tag">Branding</span>
-          <h3>Atlas &amp; Co — brand identity</h3>
-        </figcaption>
-      </figure>
 
-      <figure class="work-item reveal" data-category="web" data-title="Harbor — analytics dashboard" data-caption="SaaS dashboard with real-time reporting used by 2,000+ finance teams." data-src="images/work-4.jpg">
-        <div class="thumb">
-          <img src="work-4.jpg" alt="Harbor analytics dashboard">
-          <span class="work-zoom">+</span>
-        </div>
-        <figcaption>
-          <span class="work-tag">Web App</span>
-          <h3>Harbor — analytics dashboard</h3>
-        </figcaption>
-      </figure>
+      <article
+        class="card work-item reveal"
+        data-category="web"
+        data-title="Business Website"
+        data-caption="A modern responsive business website.">
 
-      <figure class="work-item reveal" data-category="web" data-title="Boulevard — fashion store" data-caption="Headless e-commerce storefront with 99 Lighthouse score and 1.9s load time." data-src="images/work-5.jpg">
-        <div class="thumb">
-          <img src="work-5.jpg" alt="Boulevard fashion store mockup">
-          <span class="work-zoom">+</span>
-        </div>
-        <figcaption>
-          <span class="work-tag">E-commerce</span>
-          <h3>Boulevard — fashion store</h3>
-        </figcaption>
-      </figure>
+        <div class="work-thumb">
 
-      <figure class="work-item reveal" data-category="brand" data-title="Echo — festival identity" data-caption="Bold poster system and motion identity for a three-day music festival." data-src="images/work-6.jpg">
-        <div class="thumb">
-          <img src="work-6.jpg" alt="Echo music festival posters">
           <span class="work-zoom">+</span>
+
         </div>
-        <figcaption>
-          <span class="work-tag">Branding</span>
-          <h3>Echo — festival identity</h3>
-        </figcaption>
-      </figure>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            Web Design
+          </span>
+
+          <h3>
+            Business Website
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="card work-item reveal"
+        data-category="app"
+        data-title="Mobile App"
+        data-caption="A clean mobile interface designed for a modern audience.">
+
+        <div class="work-thumb">
+
+          <span class="work-zoom">+</span>
+
+        </div>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            Mobile App
+          </span>
+
+          <h3>
+            Mobile Experience
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="card work-item reveal"
+        data-category="brand"
+        data-title="Brand Identity"
+        data-caption="A complete visual identity designed to make a business memorable.">
+
+        <div class="work-thumb">
+
+          <span class="work-zoom">+</span>
+
+        </div>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            Branding
+          </span>
+
+          <h3>
+            Brand Identity
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="card work-item reveal"
+        data-category="web"
+        data-title="Analytics Dashboard"
+        data-caption="A clean dashboard interface focused on usability and clarity.">
+
+        <div class="work-thumb">
+
+          <span class="work-zoom">+</span>
+
+        </div>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            Web App
+          </span>
+
+          <h3>
+            Analytics Dashboard
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="card work-item reveal"
+        data-category="web"
+        data-title="Online Store"
+        data-caption="A modern e-commerce experience designed for conversions.">
+
+        <div class="work-thumb">
+
+          <span class="work-zoom">+</span>
+
+        </div>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            E-commerce
+          </span>
+
+          <h3>
+            Online Store
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="card work-item reveal"
+        data-category="brand"
+        data-title="Creative Campaign"
+        data-caption="A bold visual campaign created for a modern audience.">
+
+        <div class="work-thumb">
+
+          <span class="work-zoom">+</span>
+
+        </div>
+
+        <div class="work-caption">
+
+          <span class="work-tag">
+            Branding
+          </span>
+
+          <h3>
+            Creative Campaign
+          </h3>
+
+        </div>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== TEAM ==================== -->
-<section id="team" class="section">
+
+<!-- =======================================================
+     TEAM
+======================================================= -->
+
+<section class="section" id="team">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow"></span>
-      <h2 class="section-title" style="font-size: 19px;">A person behind skydreams web design and team, Website designers and developers.</span></h2>
-      <p></p>
-    <div class="grid grid-5 team-grid">
+
+      <span class="eyebrow">
+        The person behind SkyDreams
+      </span>
+
+      <h2 class="section-title">
+
+        Creative thinking.
+
+        <span class="accent">
+          Personal service.
+        </span>
+
+      </h2>
+
+      <p>
+        Hands-on design, development and a genuine
+        commitment to every project.
+      </p>
+
+    </div>
+
+
+    <div class="team-grid">
+
       <article class="card team-card reveal">
+
         <div class="team-photo">
-          <img src="me.png" alt="Potlako Meshech Mabusela, founder and creative director">
-        </div>
-        <div class="team-body">
-          <h3>Potlako Meshech Mabusela</h3>
-          <span class="team-role">Founder &amp; Creative Director</span>
-          <p>completed over 40 projects, recorgnised being popurlar brands</p>
-          <div class="team-socials">
-            <a href="#" aria-label="Daniel on Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 4.9c-.8.4-1.7.7-2.6.8.9-.6 1.7-1.5 2-2.6-1 .6-2 1-3.1 1.2-.9-1-2.2-1.6-3.7-1.6-2.8 0-5 2.2-5 5 0 .4 0 .8.1 1.1C7.3 8.6 4.2 6.9 2.2 4.3c-.4.7-.6 1.6-.6 2.5 0 1.7.9 3.2 2.2 4.1-.8 0-1.6-.2-2.2-.6v.1c0 2.4 1.7 4.4 4 4.9-.4.1-.9.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9 0 14-7.5 14-14v-.6c1-.7 1.8-1.6 2.5-2.6z"/></svg></a>
-            <a href="#" aria-label="Daniel on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4c-1.2 0-2.1-1-2.1-2.1s.9-2.1 2.1-2.1 2.1 1 2.1 2.1-.9 2.1-2.1 2.1zM7.1 20.4H3.5V9h3.6v11.4z"/></svg></a>
+
+          <div class="team-initials">
+            PM
           </div>
+
         </div>
-   
-    </div>
+
+
+        <div class="team-body">
+
+          <h3>
+            Potlako Meshech Mabusela
+          </h3>
+
+          <span class="team-role">
+            Founder & Creative Director
+          </span>
+
+          <p>
+            Over 40 projects completed, with a growing
+            portfolio of memorable websites and digital
+            experiences.
+          </p>
+
+
+          <div class="team-socials">
+
+            <a href="#" aria-label="Facebook">
+              f
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              X
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              in
+            </a>
+
+          </div>
+
+        </div>
 
       </article>
 
-      
-
-      
-    
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== TESTIMONIALS ==================== -->
+
+<!-- =======================================================
+     TESTIMONIALS
+======================================================= -->
+
 <section class="section section-testimonials">
+
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Testimonials</span>
-      <h2 class="section-title">Kind words from <span class="accent">kind clients</span></h2>
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Testimonials
+      </span>
+
+      <h2 class="section-title">
+
+        Kind words from
+
+        <span class="accent">
+          happy clients.
+        </span>
+
+      </h2>
+
     </div>
 
-    <div class="slider reveal" id="slider">
-      <div class="slide active">
-        <span class="quote-mark">&#10077;</span>
-        <blockquote>
-          " rebuilt our storefront and cut load time by 70%. The team kept us in the loop at every
-          step and the launch went smoother than any project we have ever run. Worth every cent."
-        </blockquote>
-        <div class="slide-person">
-          <span class="avatar av-a">JM</span>
-          <div><strong>Julia Meyer</strong><span>CEO, Boulevard Fashion</span></div>
+
+    <div class="testimonial" id="testimonial">
+
+      <span class="quote-mark">
+        “
+      </span>
+
+      <blockquote id="quoteText">
+
+        SkyDreams helped us create a website that
+        finally represents our business professionally.
+        The process was simple and the result was
+        beautiful.
+
+      </blockquote>
+
+
+      <div class="slide-person">
+
+        <span class="avatar" id="quoteAvatar">
+          JM
+        </span>
+
+        <div>
+
+          <strong id="quoteName">
+            Julia Meyer
+          </strong>
+
+          <span id="quoteRole">
+            Business Owner
+          </span>
+
         </div>
+
       </div>
 
-      <div class="slide">
-        <span class="quote-mark">&#10077;</span>
-        <blockquote>
-          "They handed us a dashboard our analysts actually enjoy opening. Rare. The documentation alone is
-          better than most agencies' final deliverables."
-        </blockquote>
-        <div class="slide-person">
-          <span class="avatar av-b">TK</span>
-          <div><strong>Thabo Khumalo</strong><span>CTO, Harbor Analytics</span></div>
-        </div>
-      </div>
-
-      <div class="slide">
-        <span class="quote-mark">&#10077;</span>
-        <blockquote>
-          "Our rebrand doubled qualified leads in one quarter. People keep complimenting the identity at
-          events — work genuinely travels."
-        </blockquote>
-        <div class="slide-person">
-          <span class="avatar av-c">LS</span>
-          <div><strong>Leah Stevens</strong><span>Marketing Director, Atlas &amp; Co</span></div>
-        </div>
-      </div>
-
-      <div class="slide">
-        <span class="quote-mark">&#10077;</span>
-        <blockquote>
-          "We run a festival on a shoestring. Indlovuweb  designed a whole identity system that our volunteers can
-          actually use. It scaled from one poster to an entire site."
-        </blockquote>
-        <div class="slide-person">
-          <span class="avatar av-d">RB</span>
-          <div><strong>Ravi Balan</strong><span>Producer, Echo Festival</span></div>
-        </div>
-      </div>
-
-      <button type="button" class="slide-btn prev" id="slidePrev" aria-label="Previous testimonial">&#8249;</button>
-      <button type="button" class="slide-btn next" id="slideNext" aria-label="Next testimonial">&#8250;</button>
-      <div class="dots" id="slideDots"></div>
     </div>
+
+
+    <div class="slider-controls">
+
+      <button
+        class="slide-btn"
+        id="slidePrev"
+        aria-label="Previous testimonial">
+        ‹
+      </button>
+
+      <button
+        class="slide-btn"
+        id="slideNext"
+        aria-label="Next testimonial">
+        ›
+      </button>
+
+    </div>
+
+
+    <div class="dots" id="slideDots"></div>
+
   </div>
+
 </section>
 
-<!-- ==================== PRICING ==================== -->
-<section id="pricing" class="section section-alt">
+
+<!-- =======================================================
+     PRICING
+======================================================= -->
+
+<section class="section section-alt" id="pricing">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Pricing</span>
-      <h2 class="section-title">Simple plans, <span class="accent">no surprises</span></h2>
-      <p>Start low, upgrade when you're ready. Cancel anytime — no lock-in, no hidden fees.</p>
-      <div class="billing-toggle">
-       
-      </div>
+
+      <span class="eyebrow">
+        Pricing
+      </span>
+
+      <h2 class="section-title">
+
+        Simple plans,
+
+        <span class="accent">
+          no surprises.
+        </span>
+
+      </h2>
+
+      <p>
+        Choose the package that fits your needs.
+        Custom projects are also available.
+      </p>
+
     </div>
+
 
     <div class="grid grid-3 pricing-grid">
-      <article class="card price-card reveal" data-monthly="70" data-yearly="500">
-        <h3>Starter</h3>
-        <p class="price"><span class="currency"></span><span class="amount" data-monthly="55" data-yearly="500">R800</span><span class="period"></span></p>
-        <p class="price-note">once off, a year. Perfect for a personal site.</p>
+
+
+      <article class="card price-card reveal">
+
+        <h3>
+          Starter
+        </h3>
+
+        <p class="price">
+          R800
+        </p>
+
+        <p class="price-note">
+          A simple professional starting point
+          for a personal or small website.
+        </p>
+
+
         <ul class="price-list">
-          <li>1 page website</li>
-          <li>Free hosting </li>
-          <li>domain</li>
-          <li>Community support</li>
+
+          <li>
+            1 page website
+          </li>
+
+          <li>
+            Responsive design
+          </li>
+
+          <li>
+            Free hosting
+          </li>
+
+          <li>
+            Domain setup
+          </li>
+
+          <li>
+            Basic support
+          </li>
+
         </ul>
-        <a href="#contact" class="btn btn-outline btn-block">Get started</a>
+
+
+        <a href="#contact" class="btn btn-outline btn-block">
+          Get started
+        </a>
+
       </article>
 
-      <article class="card price-card featured reveal" data-monthly="170" data-yearly="1600">
-        <span class="ribbon">Most popular</span>
-        <h3>Pro</h3>
-        <p class="price"><span class="currency"></span><span class="amount" data-monthly="170" data-yearly="1600">R1800</span><span class="period"></span></p>
-        <p class="price-note">For growing businesses that need it all.</p>
+
+      <article class="card price-card featured reveal">
+
+        <span class="ribbon">
+          Most popular
+        </span>
+
+        <h3>
+          Pro
+        </h3>
+
+        <p class="price">
+          R1,800
+        </p>
+
+        <p class="price-note">
+          For growing businesses that need
+          a stronger online presence.
+        </p>
+
+
         <ul class="price-list">
-          <li>Up to 10 pages</li>
-          <li> Domain &amp; SSL</li>
-          <li>SEO toolkit + analytics</li>
-          <li>Priority email support</li>
-          <li>Quarterly design tune-up</li>
+
+          <li>
+            Up to 10 pages
+          </li>
+
+          <li>
+            Domain & SSL
+          </li>
+
+          <li>
+            SEO setup
+          </li>
+
+          <li>
+            Analytics
+          </li>
+
+          <li>
+            Priority support
+          </li>
+
         </ul>
-        <a href="#contact" class="btn btn-primary btn-block">Start 14-day trial</a>
+
+
+        <a href="#contact" class="btn btn-primary btn-block">
+          Start a project
+        </a>
+
       </article>
 
-      <article class="card price-card reveal" data-monthly="450" data-yearly="5000">
-        <h3>Business</h3>
-        <p class="price"><span class="currency">R</span><span class="amount" data-monthly="450" data-yearly="5000">R8000</span><span class="period"></span></p>
-        <p class="price-note">For teams that need scale and a partner.</p>
+
+      <article class="card price-card reveal">
+
+        <h3>
+          Business
+        </h3>
+
+        <p class="price">
+          R8,000
+        </p>
+
+        <p class="price-note">
+          For businesses that need a larger
+          website and advanced functionality.
+        </p>
+
+
         <ul class="price-list">
-          <li>Unlimited pages &amp; seats</li>
-          <li>E-commerce ready</li>
-          <li>Dedicated account manager</li>
-          <li>24/7 phone &amp; chat support</li>
-          <li>Custom integrations</li>
-          <li>Online payment</li>
+
+          <li>
+            Unlimited pages
+          </li>
+
+          <li>
+            E-commerce ready
+          </li>
+
+          <li>
+            Custom integrations
+          </li>
+
+          <li>
+            Online payments
+          </li>
+
+          <li>
+            Ongoing support
+          </li>
+
         </ul>
-        <a href="#contact" class="btn btn-outline btn-block">Talk to sales</a>
+
+
+        <a href="#contact" class="btn btn-outline btn-block">
+          Talk to us
+        </a>
+
       </article>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== FAQ ==================== -->
+
+<!-- =======================================================
+     FAQ
+======================================================= -->
+
 <section class="section">
+
   <div class="container container-narrow">
+
     <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="section-title">Frequently asked <span class="accent">questions</span></h2>
+
+      <span class="eyebrow">
+        FAQ
+      </span>
+
+      <h2 class="section-title">
+
+        Frequently asked
+
+        <span class="accent">
+          questions.
+        </span>
+
+      </h2>
+
     </div>
+
 
     <div class="faq-list reveal">
-      <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false">
-          <span>Why do you build sites that work on old browsers?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p>Because the web should be for everyone. Millions of people still use older computers and
-          browsers, and a site that excludes them is a site that leaves money on the table. Progressive
-          enhancement costs little and reaches far — this very template is built that way.</p>
-        </div></div>
-      </div>
+
 
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false">
-          <span>How long does a typical project take?</span><span class="faq-icon">+</span>
+
+        <button class="faq-q" type="button">
+
+          <span>
+            How long does a website take?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
         </button>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p>A marketing site usually ships in 4–6 weeks. E-commerce and web apps take 8–14 weeks.
-          We agree on milestones up front and you see progress every single week.</p>
-        </div></div>
+
+        <div class="faq-a">
+
+          <div class="faq-a-inner">
+
+            A simple website can be completed quickly,
+            while larger websites take longer depending
+            on the number of pages and features required.
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false">
-          <span>Do you require a long-term contract?</span><span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p>Never. Project work is billed per milestone and monthly plans can be cancelled any time.
-          We keep clients because we're good, not because we're binding.</p>
-        </div></div>
-      </div>
 
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false">
-          <span>Can you work with our existing team or stack?</span><span class="faq-icon">+</span>
+
+        <button class="faq-q" type="button">
+
+          <span>
+            Do you design websites for mobile phones?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
         </button>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p>Absolutely. We embed with your developers, work in your repositories, and write code that
-          follows your conventions. If you don't have a stack, we'll recommend a boring, reliable one.</p>
-        </div></div>
+
+        <div class="faq-a">
+
+          <div class="faq-a-inner">
+
+            Yes. Websites are designed to work across
+            phones, tablets, laptops and desktop screens.
+
+          </div>
+
+        </div>
+
       </div>
 
+
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false">
-          <span>What happens after launch?</span><span class="faq-icon">+</span>
+
+        <button class="faq-q" type="button">
+
+          <span>
+            Can you help me with my domain and hosting?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
         </button>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p>We monitor, measure and maintain. Every plan includes uptime monitoring and regular updates;
-          support plans add content changes, experiments and continuous improvement.</p>
-        </div></div>
+
+        <div class="faq-a">
+
+          <div class="faq-a-inner">
+
+            Yes. We can help with domain setup, hosting
+            and getting your website online.
+
+          </div>
+
+        </div>
+
       </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-q" type="button">
+
+          <span>
+            Can I request a custom website?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          <div class="faq-a-inner">
+
+            Absolutely. If your project needs features
+            outside the standard packages, contact us
+            and we can discuss a custom solution.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-q" type="button">
+
+          <span>
+            What happens after the website is launched?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          <div class="faq-a-inner">
+
+            We can continue helping with updates,
+            improvements, hosting and technical support.
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== BLOG ==================== -->
-<section id="blog" class="section section-alt">
+
+<!-- =======================================================
+     BLOG
+======================================================= -->
+
+<section class="section section-alt" id="blog">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">From the blog</span>
-      <h2 class="section-title">Notes on building <span class="accent">for the web</span></h2>
-      <p>Field notes, experiments and honest opinions. No fluff, no listicles.</p>
+
+      <span class="eyebrow">
+        From the blog
+      </span>
+
+      <h2 class="section-title">
+
+        Ideas about building
+
+        <span class="accent">
+          for the web.
+        </span>
+
+      </h2>
+
+      <p>
+        Useful thoughts about design, websites,
+        branding and digital growth.
+      </p>
+
     </div>
 
-    <div class="grid grid-3 blog-grid">
-      <article class="card blog-card reveal">
-        <div class="blog-cover cover-a"><span>10 min read</span></div>
-        <div class="blog-body">
-          <span class="blog-date">July 28, 2026 &#183; Engineering</span>
-          <h3><a href="#">Why your next site should work on a 2012 browser</a></h3>
-          <p>Progressive enhancement is not nostalgia. It is a business strategy, a performance strategy
-          and an accessibility strategy hiding in one dirty old phrase.</p>
-          <a href="#" class="card-link">Read article <span class="arrow">&#8594;</span></a>
-        </div>
-      </article>
+
+    <div class="grid grid-3">
+
 
       <article class="card blog-card reveal">
-        <div class="blog-cover cover-b"><span>6 min read</span></div>
-        <div class="blog-body">
-          <span class="blog-date">July 14, 2026 &#183; Design</span>
-          <h3><a href="#">Scrollspy navigation that doesn't annoy your users</a></h3>
-          <p>Highlighting the right menu item as people scroll sounds trivial. Getting the thresholds,
-          offsets and mobile behaviour right is a small craft in itself.</p>
-          <a href="#" class="card-link">Read article <span class="arrow">&#8594;</span></a>
+
+        <div class="blog-cover">
+          <span>
+            5 min read
+          </span>
         </div>
+
+        <div class="blog-body">
+
+          <span class="blog-date">
+            Web Design
+          </span>
+
+          <h3>
+            Why your business needs a professional website
+          </h3>
+
+          <p>
+            Your website is often the first impression
+            customers have of your business.
+          </p>
+
+          <a href="#contact" class="card-link">
+            Read article →
+          </a>
+
+        </div>
+
       </article>
 
+
       <article class="card blog-card reveal">
-        <div class="blog-cover cover-c"><span>8 min read</span></div>
-        <div class="blog-body">
-          <span class="blog-date">June 30, 2026 &#183; Process</span>
-          <h3><a href="#">The 4-step process we use on every project</a></h3>
-          <p>Discover, design, develop, deliver. The words are boring on purpose — the discipline behind
-          them is what makes deadlines stick and clients smile.</p>
-          <a href="#" class="card-link">Read article <span class="arrow">&#8594;</span></a>
+
+        <div class="blog-cover">
+          <span>
+            6 min read
+          </span>
         </div>
+
+        <div class="blog-body">
+
+          <span class="blog-date">
+            Design
+          </span>
+
+          <h3>
+            What makes a website look professional?
+          </h3>
+
+          <p>
+            Good spacing, typography, consistency and
+            clear communication can transform a website.
+          </p>
+
+          <a href="#contact" class="card-link">
+            Read article →
+          </a>
+
+        </div>
+
       </article>
+
+
+      <article class="card blog-card reveal">
+
+        <div class="blog-cover">
+          <span>
+            4 min read
+          </span>
+        </div>
+
+        <div class="blog-body">
+
+          <span class="blog-date">
+            Business
+          </span>
+
+          <h3>
+            Turning visitors into customers
+          </h3>
+
+          <p>
+            A beautiful website should not only look good.
+            It should guide visitors toward action.
+          </p>
+
+          <a href="#contact" class="card-link">
+            Read article →
+          </a>
+
+        </div>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== CONTACT ==================== -->
-<section id="contact" class="section">
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section class="section" id="contact">
+
   <div class="container">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Contact</span>
-      <h2 class="section-title">Let's build something <span class="accent">together</span></h2>
-      <p>Tell us about your project. We reply within one business day — usually much sooner.</p>
+
+      <span class="eyebrow">
+        Contact
+      </span>
+
+      <h2 class="section-title">
+
+        Let's build something
+
+        <span class="accent">
+          together.
+        </span>
+
+      </h2>
+
+      <p>
+        Tell us what you want to build, improve or grow.
+      </p>
+
     </div>
 
-    <div class="split split-contact">
+
+    <div class="split">
+
+
       <div class="split-body reveal">
+
         <ul class="contact-list">
+
+
           <li>
+
             <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8">
+
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+
+              </svg>
+
             </span>
-            <div><strong>Visit us</strong><span>Naledi, Khoapha, Matatiele, ZA</span></div>
+
+            <div>
+
+              <strong>
+                Visit us
+              </strong>
+
+              <span>
+                Naledi, Khoapha, Matatiele, ZA
+              </span>
+
+            </div>
+
           </li>
+
+
           <li>
+
             <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8">
+
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+                19.8 19.8 0 0 1-8.6-3.1
+                19.5 19.5 0 0 1-6-6
+                19.8 19.8 0 0 1-3.1-8.6
+                A2 2 0 0 1 4.1 2h3a2 2 0 0 1
+                2 1.7 12.8 12.8 0 0 0 .7 2.8
+                2 2 0 0 1-.5 2.1L8.1 9.9a16
+                16 0 0 0 6 6l1.3-1.3a2 2
+                0 0 1 2.1-.5 12.8 12.8 0
+                0 0 0 2.8.7A2 2 0 0 1 22 16.9z"/>
+
+              </svg>
+
             </span>
-            <div><strong>Call us</strong><span>+27 648969111</span></div>
+
+            <div>
+
+              <strong>
+                Call us
+              </strong>
+
+              <span>
+                +27 64 896 9111
+              </span>
+
+            </div>
+
           </li>
+
+
           <li>
+
             <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8">
+
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M22 6l-10 7L2 6"/>
+
+              </svg>
+
             </span>
-            <div><strong>Email us</strong><span>motloungtlou9@gmail.com</span></div>
+
+            <div>
+
+              <strong>
+                Email us
+              </strong>
+
+              <span>
+                motloungtlou9@gmail.com
+              </span>
+
+            </div>
+
           </li>
+
+
           <li>
+
             <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8">
+
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+
+              </svg>
+
             </span>
-            <div><strong>Working hours</strong><span>Mon–Fri, 9:00 – 18:00 (SAST)</span></div>
+
+            <div>
+
+              <strong>
+                Working hours
+              </strong>
+
+              <span>
+                Mon–Fri, 9:00 – 18:00 SAST
+              </span>
+
+            </div>
+
           </li>
+
         </ul>
+
 
         <div class="contact-socials">
-          <span>Follow us:</span>
-          <a href="#" aria-label="Facebook" class="soc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.5v3H11v7h2.5z"/></svg></a>
-          <a href="#" aria-label="Twitter" class="soc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 4.9c-.8.4-1.7.7-2.6.8.9-.6 1.7-1.5 2-2.6-1 .6-2 1-3.1 1.2-.9-1-2.2-1.6-3.7-1.6-2.8 0-5 2.2-5 5 0 .4 0 .8.1 1.1C7.3 8.6 4.2 6.9 2.2 4.3c-.4.7-.6 1.6-.6 2.5 0 1.7.9 3.2 2.2 4.1-.8 0-1.6-.2-2.2-.6v.1c0 2.4 1.7 4.4 4 4.9-.4.1-.9.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9 0 14-7.5 14-14v-.6c1-.7 1.8-1.6 2.5-2.6z"/></svg></a>
-          <a href="#" aria-label="LinkedIn" class="soc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4c-1.2 0-2.1-1-2.1-2.1s.9-2.1 2.1-2.1 2.1 1 2.1 2.1-.9 2.1-2.1 2.1zM7.1 20.4H3.5V9h3.6v11.4z"/></svg></a>
-          <a href="#" aria-label="Instagram" class="soc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+
+          <span>
+            Follow us:
+          </span>
+
+          <a href="#" class="soc">
+            f
+          </a>
+
+          <a href="#" class="soc">
+            X
+          </a>
+
+          <a href="#" class="soc">
+            in
+          </a>
+
+          <a href="#" class="soc">
+            ◎
+          </a>
+
         </div>
+
       </div>
+
 
       <div class="split-body reveal">
-        <form id="contactForm" class="form" novalidate>
+
+        <form class="form" id="contactForm" novalidate>
+
           <div class="form-row">
+
             <div class="form-field">
-              <label for="fName">Your name</label>
-              <input type="text" id="fName" name="name" placeholder="Jane Doe">
-              <span class="error-msg" id="errName"></span>
+
+              <label for="fName">
+                Your name
+              </label>
+
+              <input
+                type="text"
+                id="fName"
+                placeholder="Your name">
+
+              <span
+                class="error-msg"
+                id="errName">
+              </span>
+
             </div>
+
+
             <div class="form-field">
-              <label for="fEmail">Email address</label>
-              <input type="email" id="fEmail" name="email" placeholder="jane@company.com">
-              <span class="error-msg" id="errEmail"></span>
+
+              <label for="fEmail">
+                Email address
+              </label>
+
+              <input
+                type="email"
+                id="fEmail"
+                placeholder="you@example.com">
+
+              <span
+                class="error-msg"
+                id="errEmail">
+              </span>
+
             </div>
+
           </div>
+
+
           <div class="form-field">
-            <label for="fSubject">Subject</label>
-            <input type="text" id="fSubject" name="subject" placeholder="A new project…">
-            <span class="error-msg" id="errSubject"></span>
+
+            <label for="fSubject">
+              Subject
+            </label>
+
+            <input
+              type="text"
+              id="fSubject"
+              placeholder="A new website...">
+
+            <span
+              class="error-msg"
+              id="errSubject">
+            </span>
+
           </div>
+
+
           <div class="form-field">
-            <label for="fMessage">Message</label>
-            <textarea id="fMessage" name="message" rows="5" placeholder="Tell us about your goals, timeline and budget."></textarea>
-            <span class="error-msg" id="errMessage"></span>
+
+            <label for="fMessage">
+              Message
+            </label>
+
+            <textarea
+              id="fMessage"
+              placeholder="Tell us about your project, goals and budget."></textarea>
+
+            <span
+              class="error-msg"
+              id="errMessage">
+            </span>
+
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Send message</button>
-          <p class="form-hint">No spam, no newsletters you didn't ask for. Ever.</p>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-block">
+
+            Send message
+
+          </button>
+
+
+          <p class="form-hint">
+
+            Your message will open your email app
+            so you can send it directly.
+
+          </p>
+
         </form>
 
-        <div id="formSuccess" class="form-success" hidden>
-          <span class="success-check">&#10003;</span>
-          <h3>Message sent!</h3>
-          <p>Thanks for reaching out. We'll get back to you within one business day.</p>
-          <button type="button" id="formAgain" class="btn btn-outline">Send another message</button>
+
+        <div
+          class="form-success"
+          id="formSuccess"
+          hidden>
+
+          <span class="success-check">
+            ✓
+          </span>
+
+          <h3>
+            Thank you!
+          </h3>
+
+          <p>
+            Your email application should open with
+            your message ready to send.
+          </p>
+
+          <button
+            class="btn btn-outline"
+            id="formAgain"
+            type="button">
+
+            Send another message
+
+          </button>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer class="site-footer">
+
   <div class="container">
+
     <div class="footer-grid">
+
+
       <div class="footer-col footer-about">
-        <a href="#top" class="brand brand-light">
-         
-          <img src="mylogo.png" width="150" height="120">
+
+        <a href="#top" class="brand">
+
+          <span class="brand-mark">
+            SD
+          </span>
+
+          <span class="brand-text">
+
+            SkyDreams
+
+            <small>
+              Web Design
+            </small>
+
+          </span>
+
         </a>
-       
-        
+
+
+        <p>
+
+          Beautiful websites and digital experiences
+          designed to help businesses grow online.
+
+        </p>
+
       </div>
 
-      <div class="footer-col" style="padding-left: 72px;" >
-        <h4><u>Quick links</u></h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col" style="padding-left: 72px;">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Web design</a></li>
-          <li><a href="#services">Development</a></li>
-          <li><a href="#services">Brand identity</a></li>
-          <li><a href="#services">SEO &amp; growth</a></li>
-          <li><a href="#services">Support &amp; hosting</a></li>
-        </ul>
-      </div>
 
       <div class="footer-col">
-        <h4 style="padding-left: 12px;">Newsletter</h4>
-        
-        <form id="newsForm" class="news-form" novalidate>
-          <input type="email" id="newsEmail" placeholder="you@example.com" aria-label="Email for newsletter">
-          <button type="submit" class="btn btn-primary btn-sm">Join</button>
-        </form>
-        <p id="newsMsg" class="news-msg"></p>
+
+        <h4>
+          Quick links
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#work">Work</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
       </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Services
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="#services">Web Design</a>
+          </li>
+
+          <li>
+            <a href="#services">Development</a>
+          </li>
+
+          <li>
+            <a href="#services">Brand Identity</a>
+          </li>
+
+          <li>
+            <a href="#services">SEO & Growth</a>
+          </li>
+
+          <li>
+            <a href="#services">Support</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Newsletter
+        </h4>
+
+        <form
+          class="news-form"
+          id="newsForm">
+
+          <input
+            type="email"
+            id="newsEmail"
+            placeholder="Your email"
+            required>
+
+          <button
+            type="submit"
+            class="btn btn-primary">
+
+            Join
+
+          </button>
+
+        </form>
+
+        <p
+          class="news-msg"
+          id="newsMsg">
+        </p>
+
+      </div>
+
     </div>
+
 
     <div class="footer-bottom">
-      <p style="padding-left: 12px;">&copy; 2026 skydreams.co.za </p>
-     
+
+      © 2026 SkyDreams. All rights reserved.
+
     </div>
+
   </div>
+
 </footer>
 
-<!-- ==================== BACK TO TOP ==================== -->
-<a href="#top" id="toTop" class="to-top" aria-label="Back to top">&#8593;</a>
 
-<!-- ==================== LIGHTBOX ==================== -->
-<div id="lightbox" class="lightbox" hidden>
-  <button type="button" id="lbClose" class="lb-btn lb-close" aria-label="Close">&#10005;</button>
-  <button type="button" id="lbPrev" class="lb-btn lb-prev" aria-label="Previous image">&#8249;</button>
-  <button type="button" id="lbNext" class="lb-btn lb-next" aria-label="Next image">&#8250;</button>
-  <div class="lb-inner">
-    <img id="lbImage" src="" alt="">
-    <div class="lb-caption">
-      <h3 id="lbTitle"></h3>
-      <p id="lbCaption"></p>
+<!-- =======================================================
+     BACK TO TOP
+======================================================= -->
+
+<a
+  href="#top"
+  class="to-top"
+  id="toTop"
+  aria-label="Back to top">
+
+  ↑
+
+</a>
+
+
+<!-- =======================================================
+     LIGHTBOX
+======================================================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true">
+
+  <button
+    class="lb-btn lb-close"
+    id="lbClose"
+    aria-label="Close">
+
+    ×
+
+  </button>
+
+
+  <button
+    class="lb-btn lb-prev"
+    id="lbPrev"
+    aria-label="Previous">
+
+    ‹
+
+  </button>
+
+
+  <div class="lightbox-inner">
+
+    <div class="lightbox-visual">
+
+      <span>
+        SD
+      </span>
+
     </div>
+
+    <h3 id="lbTitle">
+      Project
+    </h3>
+
+    <p id="lbCaption">
+      Project description
+    </p>
+
   </div>
+
+
+  <button
+    class="lb-btn lb-next"
+    id="lbNext"
+    aria-label="Next">
+
+    ›
+
+  </button>
+
 </div>
 
 
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
 
-<script src="main.js"></script>
+<script>
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
+
+navToggle.addEventListener("click", () => {
+
+  const open = mainNav.classList.toggle("open");
+
+  navToggle.setAttribute(
+    "aria-expanded",
+    open ? "true" : "false"
+  );
+
+});
+
+
+document.querySelectorAll(".nav-link").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    mainNav.classList.remove("open");
+
+    navToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  });
+
+});
+
+
+/* =========================================================
+   TYPING HERO
+========================================================= */
+
+const typed = document.getElementById("typed");
+
+const words = [
+  "better website.",
+  "stronger presence.",
+  "beautiful brand.",
+  "digital future."
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+
+function typeEffect(){
+
+  const word = words[wordIndex];
+
+  if(!deleting){
+
+    typed.textContent =
+      word.substring(0,charIndex + 1);
+
+    charIndex++;
+
+    if(charIndex === word.length){
+
+      deleting = true;
+
+      setTimeout(typeEffect,1500);
+
+      return;
+    }
+
+  }else{
+
+    typed.textContent =
+      word.substring(0,charIndex - 1);
+
+    charIndex--;
+
+    if(charIndex === 0){
+
+      deleting = false;
+
+      wordIndex =
+        (wordIndex + 1) % words.length;
+
+    }
+
+  }
+
+  setTimeout(
+    typeEffect,
+    deleting ? 45 : 90
+  );
+
+}
+
+typeEffect();
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+const progressFill =
+  document.getElementById("progressFill");
+
+window.addEventListener("scroll", () => {
+
+  const scrollTop =
+    window.scrollY;
+
+  const height =
+    document.documentElement.scrollHeight
+    - window.innerHeight;
+
+  const progress =
+    height > 0
+      ? (scrollTop / height) * 100
+      : 0;
+
+  progressFill.style.width =
+    progress + "%";
+
+});
+
+
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
+
+const revealObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          revealObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+/* =========================================================
+   COUNTERS
+========================================================= */
+
+const counters =
+  document.querySelectorAll(".counter");
+
+let countersStarted = false;
+
+
+function startCounters(){
+
+  if(countersStarted) return;
+
+  countersStarted = true;
+
+  counters.forEach(counter => {
+
+    const target =
+      Number(counter.dataset.target);
+
+    let current = 0;
+
+    const increment =
+      Math.max(1,Math.ceil(target / 60));
+
+    const timer =
+      setInterval(() => {
+
+        current += increment;
+
+        if(current >= target){
+
+          current = target;
+
+          clearInterval(timer);
+
+        }
+
+        counter.textContent =
+          current;
+
+      },25);
+
+  });
+
+}
+
+
+const statsObserver =
+  new IntersectionObserver(entries => {
+
+    if(entries[0].isIntersecting){
+
+      startCounters();
+
+      statsObserver.disconnect();
+
+    }
+
+  });
+
+
+statsObserver.observe(
+  document.getElementById("stats")
+);
+
+
+/* =========================================================
+   SKILL BARS
+========================================================= */
+
+const skills =
+  document.querySelectorAll(".skill-fill");
+
+
+const skillObserver =
+  new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        const value =
+          entry.target.dataset.value;
+
+        entry.target.style.width =
+          value + "%";
+
+        skillObserver.unobserve(
+          entry.target
+        );
+
+      }
+
+    });
+
+  });
+
+
+skills.forEach(skill => {
+
+  skillObserver.observe(skill);
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+  document.querySelectorAll("section[id]");
+
+const navLinks =
+  document.querySelectorAll(".nav-link");
+
+
+const sectionObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+          });
+
+
+          const active =
+            document.querySelector(
+              `.nav-link[href="#${entry.target.id}"]`
+            );
+
+          if(active){
+
+            active.classList.add("active");
+
+          }
+
+        }
+
+      });
+
+    },
+    {
+      rootMargin:"-30% 0px -60% 0px"
+    }
+  );
+
+
+sections.forEach(section => {
+
+  sectionObserver.observe(section);
+
+});
+
+
+/* =========================================================
+   FILTER PORTFOLIO
+========================================================= */
+
+const filterButtons =
+  document.querySelectorAll(".filter-btn");
+
+const workItems =
+  document.querySelectorAll(".work-item");
+
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn => {
+
+      btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+    const filter =
+      button.dataset.filter;
+
+    workItems.forEach(item => {
+
+      const category =
+        item.dataset.category;
+
+      if(
+        filter === "all" ||
+        category === filter
+      ){
+
+        item.style.display = "";
+
+        setTimeout(() => {
+
+          item.style.opacity = "1";
+
+        },20);
+
+      }else{
+
+        item.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+document
+  .querySelectorAll(".faq-q")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const item =
+        button.parentElement;
+
+      const answer =
+        item.querySelector(".faq-a");
+
+      const isOpen =
+        item.classList.contains("open");
+
+
+      document
+        .querySelectorAll(".faq-item")
+        .forEach(other => {
+
+          if(other !== item){
+
+            other.classList.remove("open");
+
+            other.querySelector(
+              ".faq-a"
+            ).style.maxHeight = null;
+
+          }
+
+        });
+
+
+      if(isOpen){
+
+        item.classList.remove("open");
+
+        answer.style.maxHeight = null;
+
+      }else{
+
+        item.classList.add("open");
+
+        answer.style.maxHeight =
+          answer.scrollHeight + "px";
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   TESTIMONIAL SLIDER
+========================================================= */
+
+const testimonials = [
+
+  {
+    quote:
+      "SkyDreams helped us create a website that finally represents our business professionally. The process was simple and the result was beautiful.",
+    name:"Julia Meyer",
+    role:"Business Owner",
+    avatar:"JM"
+  },
+
+  {
+    quote:
+      "The website feels modern, fast and easy to use. We now have something we are proud to send to our customers.",
+    name:"Thabo Khumalo",
+    role:"Business Director",
+    avatar:"TK"
+  },
+
+  {
+    quote:
+      "The attention to detail made a huge difference. SkyDreams understood the vision and turned it into something real.",
+    name:"Leah Stevens",
+    role:"Marketing Director",
+    avatar:"LS"
+  },
+
+  {
+    quote:
+      "Professional communication, creative ideas and a website that works beautifully on mobile. Highly recommended.",
+    name:"Ravi Balan",
+    role:"Creative Producer",
+    avatar:"RB"
+  }
+
+];
+
+
+let testimonialIndex = 0;
+
+const quoteText =
+  document.getElementById("quoteText");
+
+const quoteName =
+  document.getElementById("quoteName");
+
+const quoteRole =
+  document.getElementById("quoteRole");
+
+const quoteAvatar =
+  document.getElementById("quoteAvatar");
+
+const slideDots =
+  document.getElementById("slideDots");
+
+
+testimonials.forEach((_,index) => {
+
+  const dot =
+    document.createElement("span");
+
+  dot.className =
+    "dot" +
+    (index === 0 ? " active" : "");
+
+  dot.addEventListener(
+    "click",
+    () => showTestimonial(index)
+  );
+
+  slideDots.appendChild(dot);
+
+});
+
+
+function showTestimonial(index){
+
+  testimonialIndex =
+    (index + testimonials.length)
+    % testimonials.length;
+
+  const item =
+    testimonials[testimonialIndex];
+
+  quoteText.textContent =
+    item.quote;
+
+  quoteName.textContent =
+    item.name;
+
+  quoteRole.textContent =
+    item.role;
+
+  quoteAvatar.textContent =
+    item.avatar;
+
+
+  document
+    .querySelectorAll(".dot")
+    .forEach((dot,i) => {
+
+      dot.classList.toggle(
+        "active",
+        i === testimonialIndex
+      );
+
+    });
+
+}
+
+
+document
+  .getElementById("slidePrev")
+  .addEventListener("click", () => {
+
+    showTestimonial(
+      testimonialIndex - 1
+    );
+
+  });
+
+
+document
+  .getElementById("slideNext")
+  .addEventListener("click", () => {
+
+    showTestimonial(
+      testimonialIndex + 1
+    );
+
+  });
+
+
+setInterval(() => {
+
+  showTestimonial(
+    testimonialIndex + 1
+  );
+
+},7000);
+
+
+/* =========================================================
+   PORTFOLIO LIGHTBOX
+========================================================= */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lbTitle =
+  document.getElementById("lbTitle");
+
+const lbCaption =
+  document.getElementById("lbCaption");
+
+const lbClose =
+  document.getElementById("lbClose");
+
+const lbPrev =
+  document.getElementById("lbPrev");
+
+const lbNext =
+  document.getElementById("lbNext");
+
+
+let currentWork = 0;
+
+const visibleWorks =
+  () => [...document.querySelectorAll(
+    ".work-item:not([style*='display: none'])"
+  )];
+
+
+function openWork(index){
+
+  const items =
+    visibleWorks();
+
+  if(!items.length) return;
+
+  currentWork =
+    (index + items.length) %
+    items.length;
+
+  const item =
+    items[currentWork];
+
+  lbTitle.textContent =
+    item.dataset.title;
+
+  lbCaption.textContent =
+    item.dataset.caption;
+
+  lightbox.classList.add("show");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+workItems.forEach(item => {
+
+  item.addEventListener("click", () => {
+
+    const items =
+      visibleWorks();
+
+    const index =
+      items.indexOf(item);
+
+    openWork(index);
+
+  });
+
+});
+
+
+function closeLightbox(){
+
+  lightbox.classList.remove("show");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+lbClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+lbPrev.addEventListener(
+  "click",
+  () => {
+
+    openWork(
+      currentWork - 1
+    );
+
+  }
+);
+
+
+lbNext.addEventListener(
+  "click",
+  () => {
+
+    openWork(
+      currentWork + 1
+    );
+
+  }
+);
+
+
+lightbox.addEventListener(
+  "click",
+  event => {
+
+    if(event.target === lightbox){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if(
+      event.key === "Escape" &&
+      lightbox.classList.contains("show")
+    ){
+
+      closeLightbox();
+
+    }
+
+    if(
+      event.key === "ArrowLeft" &&
+      lightbox.classList.contains("show")
+    ){
+
+      openWork(currentWork - 1);
+
+    }
+
+    if(
+      event.key === "ArrowRight" &&
+      lightbox.classList.contains("show")
+    ){
+
+      openWork(currentWork + 1);
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+const contactForm =
+  document.getElementById("contactForm");
+
+const formSuccess =
+  document.getElementById("formSuccess");
+
+
+contactForm.addEventListener(
+  "submit",
+  event => {
+
+    event.preventDefault();
+
+
+    const name =
+      document.getElementById("fName").value.trim();
+
+    const email =
+      document.getElementById("fEmail").value.trim();
+
+    const subject =
+      document.getElementById("fSubject").value.trim();
+
+    const message =
+      document.getElementById("fMessage").value.trim();
+
+
+    document.getElementById("errName").textContent =
+      "";
+
+    document.getElementById("errEmail").textContent =
+      "";
+
+    document.getElementById("errSubject").textContent =
+      "";
+
+    document.getElementById("errMessage").textContent =
+      "";
+
+
+    let valid = true;
+
+
+    if(!name){
+
+      document.getElementById(
+        "errName"
+      ).textContent =
+        "Please enter your name.";
+
+      valid = false;
+
+    }
+
+
+    if(
+      !email ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ){
+
+      document.getElementById(
+        "errEmail"
+      ).textContent =
+        "Please enter a valid email.";
+
+      valid = false;
+
+    }
+
+
+    if(!subject){
+
+      document.getElementById(
+        "errSubject"
+      ).textContent =
+        "Please enter a subject.";
+
+      valid = false;
+
+    }
+
+
+    if(!message){
+
+      document.getElementById(
+        "errMessage"
+      ).textContent =
+        "Please enter a message.";
+
+      valid = false;
+
+    }
+
+
+    if(!valid) return;
+
+
+    const mailSubject =
+      encodeURIComponent(subject);
+
+    const mailBody =
+      encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\n" + message
+      );
+
+
+    window.location.href =
+      "mailto:motloungtlou9@gmail.com" +
+      "?subject=" +
+      mailSubject +
+      "&body=" +
+      mailBody;
+
+
+    formSuccess.hidden = false;
+
+    contactForm.style.display =
+      "none";
+
+  }
+);
+
+
+document
+  .getElementById("formAgain")
+  .addEventListener("click", () => {
+
+    formSuccess.hidden = true;
+
+    contactForm.style.display =
+      "";
+
+  });
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+document
+  .getElementById("newsForm")
+  .addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById(
+          "newsEmail"
+        ).value.trim();
+
+      const message =
+        document.getElementById(
+          "newsMsg"
+        );
+
+
+      if(
+        !email ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      ){
+
+        message.textContent =
+          "Please enter a valid email.";
+
+        return;
+
+      }
+
+
+      message.textContent =
+        "Thanks! You're on the list.";
+
+      document.getElementById(
+        "newsEmail"
+      ).value = "";
+
+    }
+  );
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const toTop =
+  document.getElementById("toTop");
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if(window.scrollY > 500){
+
+      toTop.classList.add("show");
+
+    }else{
+
+      toTop.classList.remove("show");
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+console.log(
+  "SkyDreams website loaded successfully."
+);
+
+</script>
+
 </body>
 </html>
