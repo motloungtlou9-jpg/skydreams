@@ -1,5 +1,179 @@
-<html>
-  <body>
-  Potlako Meshech Mabusela 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyDreams | New Look, New Feel - Choose Your Favourite</title>
+<meta name="description" content="SkyDreams wants to reach out with New Look New Feel. Visit the link below to view upcoming website page.">
+<meta name="theme-color" content="#6d28d9">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0f0523;color:#fff;min-height:100vh;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 15% 10%, rgba(168,85,247,.45), transparent 60%),radial-gradient(700px 500px at 85% 90%, rgba(124,58,237,.5), transparent 60%),linear-gradient(180deg,#1a0533 0%,#0f0523 55%,#080218 100%)}
+.container{width:min(680px,92%);margin:auto;padding:42px 0 60px;text-align:center}
+.top{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#d8b4fe;font-weight:800}
+.logo{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,62px);font-weight:700;line-height:1;margin:14px 0 6px;background:linear-gradient(90deg,#fff,#e9d5ff,#c084fc,#fff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.logo span{font-style:italic;color:#c084fc;-webkit-text-fill-color:#c084fc}
+.sub{color:#cbd5e1;font-size:15px;line-height:1.7;max-width:560px;margin:10px auto 0}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#a855f7,#e879f9,#a855f7,transparent);margin:32px auto;width:100%;position:relative}
+hr::after{content:"✦";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#150833;padding:0 12px;color:#e879f9;font-size:16px}
+.headline{font-size:clamp(20px,5vw,28px);font-weight:900;letter-spacing:.5px;line-height:1.35;text-transform:uppercase}
+.headline em{font-family:'Playfair Display',serif;font-style:italic;text-transform:none;font-weight:600;color:#e9d5ff;letter-spacing:0}
+.headline small{display:block;font-size:13px;font-weight:600;letter-spacing:2px;color:#c084fc;margin-top:10px;text-transform:uppercase}
+
+/* OPTIONS */
+.options{display:flex;flex-direction:column;gap:18px;margin:28px 0 10px;text-align:left}
+.option{position:relative}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.card{display:block;background:rgba(255,255,255,.06);border:1.5px solid rgba(216,180,254,.25);backdrop-filter:blur(10px);padding:20px;border-radius:20px;transition:.3s;overflow:hidden;position:relative}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.18) 50%,transparent 70%);transform:translateX(-120%);animation:cardshine 3s infinite;pointer-events:none}
+@keyframes cardshine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.option:nth-child(2) .card::before{animation-delay:.7s}
+.option:nth-child(3) .card::before{animation-delay:1.4s}
+.option input:checked + .card{border-color:#e879f9;background:linear-gradient(135deg,rgba(147,51,234,.45),rgba(217,70,239,.35));box-shadow:0 0 0 3px rgba(217,70,239,.25),0 18px 40px rgba(168,85,247,.4)}
+.card-top{display:flex;align-items:center;gap:16px}
+.badge{width:56px;height:56px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:24px;background:#fff;color:#6d28d9;box-shadow:0 0 0 4px rgba(255,255,255,.15),0 0 25px rgba(217,70,239,.7);cursor:pointer}
+.option input:checked + .card .badge{background:#e879f9;color:white;box-shadow:0 0 0 4px rgba(232,121,249,.35),0 0 30px #e879f9}
+.info{flex:1;min-width:0}
+.info b{font-size:16px;display:block}
+.info span{font-size:12.5px;color:#d8b4fe;word-break:break-all}
+.info small{display:block;font-size:12px;color:#d1d5db;margin-top:3px}
+.check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:grid;place-items:center;font-size:14px;flex-shrink:0;color:transparent}
+.option input:checked + .card .check{background:#fff;border-color:#fff;color:#7c3aed;font-weight:900}
+
+/* BUTTONS UNDER EACH LETTER */
+.btn-row{display:flex;gap:10px;margin-top:16px}
+.btn{flex:1;border:none;cursor:pointer;padding:13px 10px;border-radius:100px;font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.25s}
+.btn-view{background:white;color:#6d28d9}
+.btn-view:hover{transform:translateY(-1px);background:#f3e8ff}
+.btn-wa{background:linear-gradient(90deg,#7c3aed,#d946ef);background-size:200% auto;color:white;box-shadow:0 8px 22px rgba(217,70,239,.4);animation:shine 2.5s linear infinite}
+.btn-wa:hover{transform:translateY(-1px)}
+.note{margin-top:26px;background:rgba(0,0,0,.25);border:1px solid rgba(216,180,254,.2);padding:16px;border-radius:14px;font-size:13px;color:#e9d5ff;line-height:1.6}
+.footer{margin-top:28px;font-size:12px;color:#8b7ab8}
+.footer b{color:white}
+@media(max-width:480px){.card{padding:16px}.badge{width:48px;height:48px;font-size:20px}.btn{font-size:12px;padding:12px 6px}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+
+  <div class="top">✦ SKYDREAMS.CO.ZA ✦</div>
+  <div class="logo">Sky<span>Dreams</span></div>
+  <p class="sub">Web Design • Branding • Business Websites<br>Durban • South Africa</p>
+
+  <hr>
+
+  <h1 class="headline">SkyDreams Wants To Reach Out<br>With <em>New Look, New Feel</em>
+    <small>Visit The Link Below To View Upcoming Website Page</small>
+  </h1>
+
+  <p style="font-size:14px;color:#e9d5ff;margin-top:14px;line-height:1.6">Choose your favourite — <b>A, B or C</b> — tap <b>VIEW</b> to see it, tap <b>VOTE</b> to send it straight to WhatsApp.</p>
+
+  <div class="options">
+
+    <!-- OPTION A -->
+    <div class="option">
+      <input type="radio" name="choice" id="choiceA" value="A">
+      <label class="card" for="choiceA">
+        <div class="card-top">
+          <div class="badge">A</div>
+          <div class="info">
+            <b>OPTION A — Live Website</b>
+            <span>www.ubenathi.co.za</span>
+            <small>✦ Current Live Design • Clean & Professional</small>
+          </div>
+          <span class="check">✓</span>
+        </div>
+        <!-- BUTTONS UNDER A -->
+        <div class="btn-row">
+          <button type="button" class="btn btn-view" data-link="https://www.ubenathi.co.za">👀 VIEW A</button>
+          <button type="button" class="btn btn-wa" data-choice="A" data-link="https://www.ubenathi.co.za" data-name="OPTION A - www.ubenathi.co.za (Live Website)">💬 VOTE A ON WHATSAPP</button>
+        </div>
+      </label>
+    </div>
+
+    <!-- OPTION B -->
+    <div class="option">
+      <input type="radio" name="choice" id="choiceB" value="B">
+      <label class="card" for="choiceB">
+        <div class="card-top">
+          <div class="badge">B</div>
+          <div class="info">
+            <b>OPTION B — New Concept 1</b>
+            <span>motloungtlou9-jpg.github.io/dotubenathi/</span>
+            <small>✦ New Look • Modern Feel</small>
+          </div>
+          <span class="check">✓</span>
+        </div>
+        <!-- BUTTONS UNDER B -->
+        <div class="btn-row">
+          <button type="button" class="btn btn-view" data-link="https://motloungtlou9-jpg.github.io/dotubenathi/">👀 VIEW B</button>
+          <button type="button" class="btn btn-wa" data-choice="B" data-link="https://motloungtlou9-jpg.github.io/dotubenathi/" data-name="OPTION B - New Concept 1">💬 VOTE B ON WHATSAPP</button>
+        </div>
+      </label>
+    </div>
+
+    <!-- OPTION C -->
+    <div class="option">
+      <input type="radio" name="choice" id="choiceC" value="C">
+      <label class="card" for="choiceC">
+        <div class="card-top">
+          <div class="badge">C</div>
+          <div class="info">
+            <b>OPTION C — New Concept 2</b>
+            <span>motloungtlou9-jpg.github.io/dotubenathii/</span>
+            <small>✦ New Look • Fresh & Bold</small>
+          </div>
+          <span class="check">✓</span>
+        </div>
+        <!-- BUTTONS UNDER C -->
+        <div class="btn-row">
+          <button type="button" class="btn btn-view" data-link="https://motloungtlou9-jpg.github.io/dotubenathii/">👀 VIEW C</button>
+          <button type="button" class="btn btn-wa" data-choice="C" data-link="https://motloungtlou9-jpg.github.io/dotubenathii/" data-name="OPTION C - New Concept 2">💬 VOTE C ON WHATSAPP</button>
+        </div>
+      </label>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b style="color:white">How it works:</b><br>
+    <b>👀 VIEW</b> = Opens that website to look at it &nbsp;•&nbsp; <b>💬 VOTE</b> = Goes straight to WhatsApp <b>064 896 9111</b> with your choice ready to send.
+  </div>
+
+  <div class="footer">© <span id="year"></span> <b>SkyDreams</b> • Made with 💜 in South Africa<br><a href="https://www.skydreams.co.za" style="color:#c084fc;text-decoration:underline">www.skydreams.co.za</a></div>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// VIEW BUTTONS - open link only
+document.querySelectorAll(".btn-view").forEach(btn=>{
+  btn.addEventListener("click", function(e){
+    e.preventDefault(); e.stopPropagation();
+    window.open(this.dataset.link, "_blank");
+  });
+});
+
+// VOTE BUTTONS - straight to WhatsApp with that choice
+document.querySelectorAll(".btn-wa").forEach(btn=>{
+  btn.addEventListener("click", function(e){
+    e.preventDefault(); e.stopPropagation();
+    const choice = this.dataset.choice;
+    const link = this.dataset.link;
+    const name = this.dataset.name;
+    // Also tick the radio so it looks selected
+    document.getElementById("choice"+choice).checked = true;
+    const msg = `Hi SkyDreams! 💜\n\nI viewed the upcoming website pages.\n\nMY CHOICE IS: ${choice}\n${name}\nLink: ${link}\n\nI vote for ${choice} - New Look, New Feel! ✨`;
+    const url = "https://wa.me/27648969111?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  });
+});
+</script>
 </body>
 </html>
