@@ -1,0 +1,1304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkyDreams Studio | Websites That Move Businesses Forward</title>
+
+<meta name="description" content="SkyDreams is a creative web design studio building modern, responsive and professional websites for businesses.">
+<meta name="keywords" content="web design South Africa, website designer, business websites, SkyDreams Studio">
+<meta name="author" content="SkyDreams Studio">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://www.skydreams.co.za/">
+
+<style>
+:root {
+    --black: #111111;
+    --white: #ffffff;
+    --grey: #777777;
+    --light: #f5f5f5;
+    --border: #e9e9e9;
+    --max: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: min(90%, var(--max));
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    opacity: .5;
+}
+
+.nav-cta {
+    background: var(--black);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 3px;
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 125px 0 110px;
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    background: #171714  center 45% / cover no-repeat;
+    color: #f4f0e6;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg,
+        rgba(12, 12, 11, .88) 0%,
+        rgba(12, 12, 11, .70) 55%,
+        rgba(12, 12, 11, .42) 100%);
+}
+
+.hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d0c5a6;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 94px);
+    line-height: .99;
+    letter-spacing: -6px;
+    max-width: 1000px;
+    font-weight: 900;
+    color: #f7f4eb;
+    text-shadow: 0 3px 24px rgba(0,0,0,.35);
+}
+
+.hero h1 span {
+    color: #b9a879;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 55px;
+    gap: 30px;
+border-radius:8px;
+}
+
+.hero-description {
+    color: #eee9dc;
+    font-size: 16px;
+    max-width: 410px;
+    text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+border-radius:8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 25px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+    border: 1px solid var(--black);
+}
+
+.btn-dark {
+    background: #b9a879;
+    color: #171714;
+    border-color: #b9a879;
+}
+
+.btn-dark:hover {
+    background: #e5dcc5;
+    border-color: #e5dcc5;
+    color: #171714;
+}
+
+.btn-light {
+    color: #f7f4eb;
+    border-color: rgba(247,244,235,.75);
+    background: rgba(0,0,0,.18);
+}
+
+.btn-light:hover {
+    background: #f7f4eb;
+    border-color: #f7f4eb;
+    color: #171714;
+}
+
+/* BRAND STRIP */
+
+.trusted {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 35px 0;
+}
+
+.trusted-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--grey);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #333;
+}
+
+.brand:nth-child(2) {
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.brand:nth-child(3) {
+    letter-spacing: 4px;
+    font-size: 17px;
+}
+
+.brand:nth-child(4) {
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* INTRO */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: -3px;
+    line-height: 1.05;
+}
+
+.section-heading p {
+    max-width: 350px;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 420px;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+.brand-text{
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1;
+}
+
+.brand-text small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.about-image h3 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.about-image span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.about-text h2 {
+    font-size: 43px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: var(--grey);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* SERVICES */
+
+.services {
+    background: var(--light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #ddd;
+    border: 1px solid #ddd;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 30px;
+    min-height: 260px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    background: #111;
+    color: white;
+}
+
+.service-number {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 13px;
+    color: var(--grey);
+}
+
+.service-card:hover p {
+    color: #bbb;
+}
+
+/* PROJECT STYLES */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 25px;
+}
+
+.project-image {
+    height: 310px;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 25px;
+    transition: .3s;
+}
+
+.project-card:hover .project-image {
+    background: #333;
+}
+
+.project-image h3 {
+    font-size: clamp(30px, 5vw, 55px);
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+.project-image.light {
+    background: #eee;
+    color: #111;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    gap: 15px;
+}
+
+.project-info h3 {
+    font-size: 18px;
+}
+
+.project-info p {
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.project-arrow {
+    font-size: 24px;
+}
+
+/* PRICING */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.price-card {
+    border: 1px solid #e5e2dc;
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-height: 100%;
+}
+
+.price-featured {
+    border: 1px solid #a9986d;
+    box-shadow: 0 14px 40px rgba(30,25,12,.08);
+}
+
+.price-label {
+    color: #8a7a52;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.price-card h3 {
+    font-size: clamp(30px, 3vw, 42px);
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+}
+
+.price-summary {
+    color: var(--grey);
+    font-size: 13px;
+    min-height: 62px;
+    margin-bottom: 24px;
+}
+
+.price-card ul {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.price-card li {
+    border-top: 1px solid #eee;
+    padding: 11px 0;
+    font-size: 12px;
+    color: #444;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: #8a7a52;
+    font-weight: 800;
+    margin-right: 9px;
+}
+
+.price-link {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #e5e2dc;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.price-link:hover {
+    color: #8a7a52;
+}
+
+.pricing-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin-top: 28px;
+    padding: 22px 25px;
+    background: #f5f4f0;
+    color: #555;
+    font-size: 12px;
+}
+
+.pricing-note strong {
+    color: #171714;
+}
+
+/* PROCESS */
+
+.process {
+    background: #111;
+    color: white;
+}
+
+.process .eyebrow,
+.process .section-heading p {
+    color: #999;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.process-card {
+    border-top: 1px solid #555;
+    padding-top: 25px;
+}
+
+.process-card span {
+    font-size: 12px;
+    color: #999;
+}
+
+.process-card h3 {
+    font-size: 20px;
+    margin: 20px 0 12px;
+}
+
+.process-card p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* CTA */
+
+.contact {
+    padding: 110px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: clamp(43px, 7vw, 78px);
+    letter-spacing: -5px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.contact p {
+    color: var(--grey);
+    max-width: 480px;
+    margin: 0 auto 35px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    color: white;
+    padding: 60px 0 25px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.footer-description {
+    max-width: 300px;
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.footer-links h4 {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+    margin: 9px 0;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #888;
+    font-size: 11px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    background:darkkhaki;
+    color: black;
+    border: 1px solid darkkhaki;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 5px 20px #0002;
+}
+
+.whatsapp:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--border);
+        gap: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 90px 0 80px;
+        min-height: 560px;
+        background-position: center;
+    }
+
+    .hero::before {
+        background: rgba(12, 12, 11, .76);
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-bottom,
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .service-grid,
+    .portfolio-grid,
+    .pricing-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 250px;
+    }
+
+    .about-image {
+        min-height: 300px;
+    }
+
+    .about-text h2 {
+        font-size: 35px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .contact h2 {
+        letter-spacing: -3px;
+    }
+
+    .whatsapp {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#" >  <span class="brand-text" style="color:black;" style="font-weight: 900;">
+        SkyDreams
+        <small style="color: #333;">Web Design</small>
+      </span>
+</a>
+
+        <button class="menu-btn" id="menuBtn"
+        aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact" class="nav-cta">Let's Talk ↗</a></li>
+        </ul>
+
+    </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="container">
+
+        <p class="hero-label">
+            Independent Digital Design Studio · South Africa
+        </p>
+
+        <h1>
+            WE BUILD<br>
+            DIGITAL <span>DREAMS.</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+            <p class="hero-description">
+                We design and develop modern websites that help
+                businesses look professional, build trust and grow
+                in the digital world.
+            </p>
+
+            <div class="hero-buttons" >
+                <a href="#pricing" class="btn btn-dark" style="border-radius:8px;">
+                    View Website Packages ↗
+                </a>
+
+                <a href="#contact" class="btn btn-light">
+                    Start A Project
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CLIENT BRAND STRIP -->
+
+<section class="trusted">
+    <div class="container">
+
+        <p class="trusted-title">
+            A selection of businesses and projects we've worked with
+        </p>
+
+        <div class="brand-list">
+            <div class="brand">UBENATHI.</div>
+            <div class="brand">MOKGOSI SA</div>
+            <div class="brand">SICUL</div>
+            <div class="brand">KHULU.</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+                <div>
+                    <h3>DESIGN.<br>CREATE.<br>INSPIRE.</h3>
+                    <span>SKYDREAMS STUDIO</span>
+                </div>
+            </div>
+
+            <div class="about-text">
+
+                <p class="eyebrow">01 / WHO WE ARE</p>
+
+                <h2 style="color: orange;">
+                    Good design is not just how it looks.
+                    It's how it makes people feel.
+                </h2>
+
+                <p>
+                    SkyDreams is a digital design studio focused
+                    on creating clean, modern and effective
+                    websites for businesses and individuals.
+                </p>
+
+                <p>
+                    We combine creativity, technology and attention
+                    to detail to give every business a professional
+                    presence online.
+                </p>
+
+                <a href="#contact" class="text-link">
+                    Work With Us ↗
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">02 / WHAT WE DO</p>
+                <h2  style="color: orange;">Our Services.</h2>
+            </div>
+
+            <p>
+                Everything your business needs to establish
+                a strong and professional digital presence.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <p class="service-number">01 / DESIGN</p>
+                <h3>Website Design</h3>
+                <p>
+                    Beautiful, modern and user-friendly website
+                    designs that represent your brand.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <p class="service-number">02 / DEVELOPMENT</p>
+                <h3>Web Development</h3>
+                <p>
+                    Responsive websites built to work smoothly
+                    across phones, tablets and computers.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <p class="service-number">03 / E-COMMERCE</p>
+                <h3>Online Stores</h3>
+                <p>
+                    Give your customers a convenient way to
+                    discover and purchase your products online.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <p class="service-number">04 / VISIBILITY</p>
+                <h3>SEO & Google</h3>
+                <p>
+                    Search-friendly website structures that
+                    help your business become discoverable online.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <p class="service-number">05 / MAINTENANCE</p>
+                <h3>Website Support</h3>
+                <p>
+                    Website updates, improvements and ongoing
+                    support to keep your online presence current.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <p class="service-number">06 / BRANDING</p>
+                <h3>Digital Identity</h3>
+                <p>
+                    A consistent digital presentation that
+                    makes your business memorable.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 03: PRICING -->
+
+<section class="section" id="pricing">
+    <div class="container">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">03 / WEBSITE PRICING</p>
+                <h2  style="color: orange;">Clear prices.<br  style="color: orange;">Real value.</h2>
+            </div>
+            <p>
+                Straightforward website packages for businesses ready
+                to build a professional presence online. All prices are
+                in South African rand (ZAR).
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <article class="price-card">
+                <p class="price-label">STARTER WEBSITE</p>
+                <h3>R1,500</h3>
+                <p class="price-summary">
+                    A clean online starting point for a small business
+                    or personal brand.
+                </p>
+                <ul>
+                    <li>One-page responsive website</li>
+                    <li>About, services and contact sections</li>
+                    <li>WhatsApp contact button</li>
+                    <li>Basic Google-friendly SEO setup</li>
+                    <li>Mobile and desktop layout</li>
+                </ul>
+                <a href="#contact" class="price-link">
+                    Choose Starter ↗
+                </a>
+            </article>
+
+            <article class="price-card price-featured">
+                <p class="price-label">BUSINESS WEBSITE · POPULAR</p>
+                <h3>R2,800</h3>
+                <p class="price-summary">
+                    A stronger multi-section website to present your
+                    business professionally.
+                </p>
+                <ul>
+                    <li>Up to 5 pages</li>
+                    <li>Custom responsive design</li>
+                    <li>Services, about and contact pages</li>
+                    <li>WhatsApp integration</li>
+                    <li>Basic on-page SEO setup</li>
+                    <li>Google Maps or social links</li>
+                </ul>
+                <a href="#contact" class="price-link">
+                    Choose Business ↗
+                </a>
+            </article>
+
+            <article class="price-card">
+                <p class="price-label">ONLINE STORE</p>
+                <h3>From R4,500</h3>
+                <p class="price-summary">
+                    A product-focused website for businesses that
+                    want to sell online.
+                </p>
+                <ul>
+                    <li>Product catalogue layout</li>
+                    <li>Product and category sections</li>
+                    <li>WhatsApp order enquiries</li>
+                    <li>Responsive mobile design</li>
+                    <li>Basic SEO setup</li>
+                    <li>Product upload scope agreed upfront</li>
+                </ul>
+                <a href="#contact" class="price-link">
+                    Discuss Your Store ↗
+                </a>
+            </article>
+
+        </div>
+
+        <div class="pricing-note">
+            <strong>Add</strong>
+            <span>Website Host at R200/month with free 20 emails account (example@company.co.za) and  free domain.</span>
+            
+            <span>
+                Domain registration, professional email and paid hosting
+                are quoted separately where required.
+            </span>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">04 / OUR APPROACH</p>
+                <h2>Simple. Clear. Effective.</h2>
+            </div>
+
+            <p>
+                From the first conversation to the final launch,
+                we keep the process straightforward.
+            </p>
+
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+                <span>01</span>
+                <h3>Discover</h3>
+                <p>
+                    We learn about your business, your goals
+                    and what you want your website to achieve.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <span>02</span>
+                <h3>Design</h3>
+                <p>
+                    We create a visual direction that reflects
+                    your business identity.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <span>03</span>
+                <h3>Develop</h3>
+                <p>
+                    We bring the design to life with responsive
+                    development and attention to detail.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <span>04</span>
+                <h3>Launch</h3>
+                <p>
+                    Your website goes live and your business
+                    takes its next step online.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <p class="eyebrow">05 / HAVE A PROJECT?</p>
+
+        <h2>
+            LET'S BUILD<br>
+            SOMETHING <span>GREAT.</span>
+        </h2>
+
+        <p>
+            Your business deserves a website that works as
+            hard as you do. Let's make it happen.
+        </p>
+
+        <a href="https://wa.me/27648969111"
+           class="btn btn-dark" id="contactBtn">
+            Start A Conversation ↗
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+                <div class="footer-logo"  style="color: skyblue;">SKYDREAMS.</div>
+
+                <p class="footer-description">
+                    Creating digital experiences that help
+                    businesses move forward.
+                </p>0
+            </div>
+
+            <div class="footer-links">
+                <h4>EXPLORE</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>CONNECT</h4>
+                <a href="#contact">Contact Us</a>
+                <a href="https://www.skydreams.co.za/">
+                    Website
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span> SkyDreams Studio.
+                All rights reserved.
+            </p>
+
+            
+
+        </div>
+
+    </div>
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/27XXXXXXXXX"
+   class="whatsapp" id="whatsappBtn">
+    Let's Chat ↗
+</a>
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.textContent = isOpen ? "×" : "☰";
+
+});
+
+// CLOSE MENU WHEN LINK IS CLICKED
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+
+});
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
